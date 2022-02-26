@@ -80,12 +80,17 @@ while True:
                     print("Data", obj.data)
                     cv2.putText(frame, "Parking Taken", (50, 200), font, 2,(0, 0, 255), 3)
                     cv2.putText(frame, str(obj.data), (50, 100), font, 2,(0, 0, 255), 3)
+                buffer = 10000
+        
+        if buffer:
+            while buffer>0:        
                 cv2.imshow('Frame',frame)
-                sleep(5)
-                buffer+=1
-        if buffer == 0:
-            cv2.imshow('Frame',frame)
-        buffer = 0
+                buffer-=1
+            continue
+        
+        cv2.imshow('Frame',frame)
+      
+        
             
             
 
@@ -120,15 +125,15 @@ while True:
                     print("Data", obj.data)
                     cv2.putText(frame, "Bill Generated", (50, 200), font, 2,(0, 0, 255), 3)
                     cv2.putText(frame, str(obj.data), (50, 100), font, 2,(0, 0, 255), 3)
+                buffer=10000
+                
+        if buffer:
+            while buffer>0:        
                 cv2.imshow('Frame',frame)
-                sleep(5)
-                buffer+=1
-        if buffer == 0:
-            cv2.imshow('Frame',frame)
-        buffer = 0
-            
-
-
+                buffer-=1
+            continue
+        
+        cv2.imshow('Frame',frame) 
 
     k = cv2.waitKey(30) & 0xff
     if k == 27:
