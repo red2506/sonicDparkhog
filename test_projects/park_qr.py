@@ -1,4 +1,5 @@
 from asyncio.windows_events import NULL
+from time import sleep
 import cv2
 import pyzbar.pyzbar as pyzbar
 from face_recognition.api import face_locations
@@ -26,9 +27,10 @@ def EndParking(name):
     with open('parking.csv', 'r') as readFile:
         reader = csv.reader(readFile)
         for row in reader:
-            lines.append(row)
+            if row != []:
+                lines.append(row)
             print(row)
-            if name in row or name=='':
+            if name in row:
                 lines.remove(row)
 
 
@@ -45,15 +47,15 @@ buffer = 0
 mode = ['park','no park']
 passkey = 'park'
 while True:
+    
     if(passkey == mode[0]):
         _, frame = cap.read()
         decodedObjects = pyzbar.decode(frame)
-        for obj in decodedObjects:
-            print("Data", obj.data)
-            cv2.putText(frame, "Parking Taken", (50, 200), font, 2,(0, 0, 255), 3)
-            cv2.putText(frame, str(obj.data), (50, 100), font, 2,(0, 0, 255), 3)
-        cv2.imshow('Frame',frame)
-        decodedObjects = pyzbar.decode(frame)
+        # for obj in decodedObjects:
+        #     print("Data", obj.data)
+        #     cv2.putText(frame, "Parking Taken", (50, 200), font, 2,(0, 0, 255), 3)
+        #     cv2.putText(frame, str(obj.data), (50, 100), font, 2,(0, 0, 255), 3)
+        # cv2.imshow('Frame',frame)
         for obj in decodedObjects:
             print("Type:", obj.type)
             print("Data: ", obj.data, "\n")
@@ -73,16 +75,27 @@ while True:
             print("Match Found!")
             Parking(ticket)
             passkey = mode[1]
+            if obj.data != NULL:
+                for obj in decodedObjects:
+                    print("Data", obj.data)
+                    cv2.putText(frame, "Parking Taken", (50, 200), font, 2,(0, 0, 255), 3)
+                    cv2.putText(frame, str(obj.data), (50, 100), font, 2,(0, 0, 255), 3)
+                cv2.imshow('Frame',frame)
+                sleep(5)
+                buffer+=1
+        if buffer == 0:
+            cv2.imshow('Frame',frame)
+        buffer = 0
+            
+            
 
     if(passkey == mode[1]):
         _, frame = cap.read()
         decodedObjects = pyzbar.decode(frame)
-        for obj in decodedObjects:
-            print("Data", obj.data)
-            cv2.putText(frame, "Bill Generated", (50, 200), font, 2,(0, 0, 255), 3)
-            cv2.putText(frame, str(obj.data), (50, 100), font, 2,(0, 0, 255), 3)
-        cv2.imshow('Frame',frame)
-        decodedObjects = pyzbar.decode(frame)
+        # for obj in decodedObjects:
+        #     print("Data", obj.data)
+        #     cv2.putText(frame, "Bill Generated", (50, 200), font, 2,(0, 0, 255), 3)
+        #     cv2.putText(frame, str(obj.data), (50, 100), font, 2,(0, 0, 255), 3)
         for obj in decodedObjects:
             print("Type:", obj.type)
             print("Data: ", obj.data, "\n")
@@ -102,6 +115,18 @@ while True:
             print("Bill generated! Pay up please!")
             EndParking(ticket)
             passkey=mode[0]
+            if obj.data != NULL:
+                for obj in decodedObjects:
+                    print("Data", obj.data)
+                    cv2.putText(frame, "Bill Generated", (50, 200), font, 2,(0, 0, 255), 3)
+                    cv2.putText(frame, str(obj.data), (50, 100), font, 2,(0, 0, 255), 3)
+                cv2.imshow('Frame',frame)
+                sleep(5)
+                buffer+=1
+        if buffer == 0:
+            cv2.imshow('Frame',frame)
+        buffer = 0
+            
 
 
 
