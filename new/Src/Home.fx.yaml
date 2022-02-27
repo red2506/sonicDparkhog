@@ -1,0 +1,21 @@
+Home As screen:
+    BackgroundImage: =
+    Height: =Max(App.Height, App.DesignHeight)
+    Orientation: =If(Home.Width < Home.Height, Layout.Vertical, Layout.Horizontal)
+    Size: =1 + CountRows(App.SizeBreakpoints) - CountIf(App.SizeBreakpoints, Value >= Home.Width)
+    Width: =Max(App.Width, App.DesignWidth)
+
+    Icon5 As icon.Add:
+        BorderColor: =RGBA(255, 255, 255, 1)
+        Color: =RGBA(255, 255, 255, 1)
+        Height: =70
+        Icon: =Icon.History
+        PaddingBottom: =5
+        PaddingLeft: =5
+        PaddingRight: =5
+        PaddingTop: =5
+        Width: =70
+        X: =520
+        Y: =1059
+        ZIndex: =15
+

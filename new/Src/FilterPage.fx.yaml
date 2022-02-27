@@ -134,7 +134,7 @@ FilterPage As screen:
                 Height: =97.03960396039603
                 HoverFill: =Rectangle7_1.Fill
                 OnSelect: |-
-                    =Navigate(TicketsPage,ScreenTransition.Fade,{type:FilterByGallery.Selected.Filter_x0020_By})
+                    =Navigate(Home,ScreenTransition.Fade,{type:FilterByGallery.Selected.Filter_x0020_By})
                 PressedFill: =Rectangle7_1.Fill
                 TabIndex: =0
                 Width: =640
@@ -151,7 +151,7 @@ FilterPage As screen:
                 HoverColor: =TextBox3_2.Color
                 HoverFill: =TextBox3_2.Fill
                 OnSelect: |-
-                    =Navigate(TicketsPage,ScreenTransition.Fade,{type:FilterByGallery.Selected.Filter_x0020_By})
+                    =Navigate(Home,ScreenTransition.Fade,{type:FilterByGallery.Selected.Filter_x0020_By})
                 PaddingBottom: =0
                 PaddingLeft: =0
                 PaddingRight: =0
@@ -177,7 +177,7 @@ FilterPage As screen:
                 HoverFill: =icon3_2.Fill
                 Icon: =Icon.Check
                 OnSelect: |-
-                    =Navigate(TicketsPage,ScreenTransition.Fade,{type:FilterByGallery.Selected.Filter_x0020_By})
+                    =Navigate(Home,ScreenTransition.Fade,{type:FilterByGallery.Selected.Filter_x0020_By})
                 PressedBorderColor: =ColorFade(icon3_2.BorderColor, -20%)
                 PressedColor: =ColorFade(icon3_2.Color, -20%)
                 PressedFill: =icon3_2.Fill
