@@ -103,7 +103,7 @@ TicketDetailsPage As screen:
         PressedColor: =TextBox1_5.Color
         PressedFill: =TextBox1_5.Fill
         Size: =28
-        Text: ="Ticket details"
+        Text: ="Parking details"
         Width: =464
         X: =88
         ZIndex: =7
@@ -193,8 +193,8 @@ TicketDetailsPage As screen:
             Update: =Value4.Text
             Width: =640
             WidthFit: =false
-            X: =0.5
-            Y: =-7.228915662650593
+            X: =0
+            Y: =0
             ZIndex: =1
 
             Key6 As label:
@@ -305,130 +305,6 @@ TicketDetailsPage As screen:
                 Y: =90
                 ZIndex: =5
 
-        DataCard4 As typedDataCard.textualEditCard:
-            BorderColor: =RGBA(0, 0, 0, 1)
-            BorderStyle: =BorderStyle.Solid
-            DataField: ="Owner"
-            Default: =ThisItem.Owner
-            DisplayMode: =DisplayMode.Edit
-            DisplayName: ="Owner"
-            Fill: =RGBA(0, 0, 0, 0)
-            Height: =70.8235294117647
-            Required: =false
-            Update: =Value5.Text
-            Visible: =true
-            Width: =640
-            WidthFit: =false
-            X: =0.5
-            Y: =148.5
-            ZIndex: =2
-
-            Key8 As label:
-                Color: =RGBA(47,41,43,1)
-                FocusedBorderColor: =Key8.BorderColor
-                FontWeight: =Lighter
-                Height: =72
-                HoverBorderColor: =Key8.BorderColor
-                HoverColor: =Key8.Color
-                HoverFill: =Key8.Fill
-                PaddingBottom: =18
-                PaddingLeft: =0
-                PaddingRight: =0
-                PaddingTop: =24
-                PressedBorderColor: =Key8.BorderColor
-                PressedColor: =Key8.Color
-                PressedFill: =Key8.Fill
-                Size: =21
-                Text: ="Created by"
-                VerticalAlign: =VerticalAlign.Top
-                Width: =239
-                Wrap: =false
-                X: =30
-                ZIndex: =1
-
-            Value5 As text:
-                BorderColor: =If(IsBlank(Parent.Error), Parent.BorderColor, Color.Red)
-                Default: =EditRecord.Owner
-                DisabledBorderColor: =RGBA(159, 167, 165, 0)
-                DisabledColor: =RGBA(47, 41, 43, 1)
-                DisabledFill: =RGBA(159, 167, 165, 0)
-                DisplayMode: =If(true,DisplayMode.Disabled,DisplayMode.Edit)
-                Fill: =RGBA(255, 255, 255, 0)
-                FocusedBorderColor: =Value5.BorderColor
-                FocusedBorderThickness: =3
-                Height: =60
-                HoverFill: =RGBA(190, 202, 226, 0)
-                PaddingLeft: =0
-                PressedBorderColor: =Value5.HoverBorderColor
-                PressedColor: =Value5.Color
-                PressedFill: =Value5.Fill
-                RadiusBottomLeft: =0
-                RadiusBottomRight: =0
-                RadiusTopLeft: =0
-                RadiusTopRight: =0
-                Size: =21
-                Width: =314.70061728395063
-                X: =295.29938271604936
-                Y: =12.624999999999996
-                ZIndex: =2
-
-            ErrorMessage12 As label:
-                AutoHeight: =true
-                FocusedBorderColor: =ErrorMessage12.BorderColor
-                Height: =24
-                HoverBorderColor: =ErrorMessage12.BorderColor
-                HoverColor: =ErrorMessage12.Color
-                HoverFill: =ErrorMessage12.Fill
-                PaddingBottom: =0
-                PaddingLeft: =0
-                PaddingRight: =0
-                PaddingTop: =0
-                PressedBorderColor: =ErrorMessage12.BorderColor
-                PressedColor: =ErrorMessage12.Color
-                PressedFill: =ErrorMessage12.Fill
-                Size: =12
-                Text: =Parent.Error
-                Width: =Parent.Width - 60
-                X: =30
-                Y: =Value5.Y + Value5.Height
-                ZIndex: =3
-
-            StarVisible12 As label:
-                Align: =Align.Center
-                FocusedBorderColor: =StarVisible12.BorderColor
-                Height: =Key8.Height
-                HoverBorderColor: =StarVisible12.BorderColor
-                HoverColor: =StarVisible12.Color
-                HoverFill: =StarVisible12.Fill
-                PaddingBottom: =Key8.PaddingBottom
-                PaddingLeft: =Key8.PaddingLeft
-                PaddingRight: =Key8.PaddingRight
-                PaddingTop: =Key8.PaddingTop
-                PressedBorderColor: =StarVisible12.BorderColor
-                PressedColor: =StarVisible12.Color
-                PressedFill: =StarVisible12.Fill
-                Size: =21
-                Text: ="*"
-                VerticalAlign: =VerticalAlign.Top
-                Visible: =false
-                Width: =30
-                Wrap: =false
-                Y: =Key8.Y
-                ZIndex: =4
-
-            Rectangle16_1 As rectangle:
-                BorderColor: =RGBA(0, 0, 255, 1)
-                DisabledFill: =Rectangle16_1.Fill
-                Fill: =RGBA(204, 204, 204, 1)
-                FocusedBorderColor: =Rectangle16_1.BorderColor
-                Height: =2
-                HoverFill: =Rectangle16_1.Fill
-                PressedFill: =Rectangle16_1.Fill
-                TabIndex: =0
-                Width: =640
-                Y: =91.509433962264
-                ZIndex: =16
-
         DataCard6 As typedDataCard.textualEditCard:
             BorderColor: =RGBA(0, 0, 0, 1)
             BorderStyle: =BorderStyle.Solid
@@ -442,8 +318,8 @@ TicketDetailsPage As screen:
             Update: =Value6.Text
             Width: =640
             WidthFit: =false
-            X: =0.5
-            Y: =296
+            X: =0
+            Y: =1
             ZIndex: =3
 
             Key10 As label:
@@ -590,167 +466,6 @@ TicketDetailsPage As screen:
                 Y: =30
                 ZIndex: =21
 
-        DataCard7 As typedDataCard.textualEditCard:
-            BorderColor: =RGBA(0, 0, 0, 1)
-            BorderStyle: =BorderStyle.Solid
-            DataField: ="Priority"
-            Default: =ThisItem.Priority
-            DisplayMode: =DisplayMode.Edit
-            DisplayName: ="Priority"
-            Fill: =RGBA(0, 0, 0, 0)
-            Height: =82.35186993634278
-            Required: =false
-            Update: =Value8.Text
-            Width: =640
-            WidthFit: =false
-            X: =0.5
-            Y: =194
-            ZIndex: =4
-
-            Key12 As label:
-                Color: =RGBA(47,41,43,1)
-                FocusedBorderColor: =Key12.BorderColor
-                FontWeight: =Lighter
-                Height: =72
-                HoverBorderColor: =Key12.BorderColor
-                HoverColor: =Key12.Color
-                HoverFill: =Key12.Fill
-                PaddingBottom: =18
-                PaddingLeft: =0
-                PaddingRight: =0
-                PaddingTop: =24
-                PressedBorderColor: =Key12.BorderColor
-                PressedColor: =Key12.Color
-                PressedFill: =Key12.Fill
-                Size: =21
-                Text: =Parent.DisplayName
-                VerticalAlign: =VerticalAlign.Top
-                Width: =241.46913580246914
-                Wrap: =false
-                X: =27.53086419753086
-                Y: =8.641975308641974
-                ZIndex: =1
-
-            Value8 As text:
-                BorderColor: =If(IsBlank(Parent.Error), Parent.BorderColor, Color.Red)
-                Default: =priority
-                DisabledBorderColor: =RGBA(159, 167, 165, 0)
-                DisabledColor: =RGBA(47, 41, 43, 1)
-                DisabledFill: =RGBA(159, 167, 165, 0)
-                DisplayMode: =If(true,DisplayMode.Disabled,DisplayMode.Edit)
-                FocusedBorderColor: =Value8.BorderColor
-                FocusedBorderThickness: =3
-                Height: =52
-                OnSelect: |-
-                    =Navigate(PriorityPage, ScreenTransition.Fade,{priority:Value8.Text})
-                PaddingLeft: =0
-                PressedBorderColor: =Value8.HoverBorderColor
-                PressedColor: =Value8.Color
-                PressedFill: =Value8.Fill
-                RadiusBottomLeft: =0
-                RadiusBottomRight: =0
-                RadiusTopLeft: =0
-                RadiusTopRight: =0
-                Size: =21
-                Width: =314.61728395061726
-                X: =295.38271604938273
-                Y: =25.703703703703716
-                ZIndex: =2
-
-            ErrorMessage14 As label:
-                AutoHeight: =true
-                FocusedBorderColor: =ErrorMessage14.BorderColor
-                Height: =24
-                HoverBorderColor: =ErrorMessage14.BorderColor
-                HoverColor: =ErrorMessage14.Color
-                HoverFill: =ErrorMessage14.Fill
-                PaddingBottom: =0
-                PaddingLeft: =0
-                PaddingRight: =0
-                PaddingTop: =0
-                PressedBorderColor: =ErrorMessage14.BorderColor
-                PressedColor: =ErrorMessage14.Color
-                PressedFill: =ErrorMessage14.Fill
-                Size: =12
-                Text: =Parent.Error
-                Width: =Parent.Width - 60
-                X: =30
-                Y: =Value8.Y + Value8.Height
-                ZIndex: =3
-
-            StarVisible14 As label:
-                Align: =Align.Center
-                FocusedBorderColor: =StarVisible14.BorderColor
-                Height: =Key12.Height
-                HoverBorderColor: =StarVisible14.BorderColor
-                HoverColor: =StarVisible14.Color
-                HoverFill: =StarVisible14.Fill
-                PaddingBottom: =Key12.PaddingBottom
-                PaddingLeft: =Key12.PaddingLeft
-                PaddingRight: =Key12.PaddingRight
-                PaddingTop: =Key12.PaddingTop
-                PressedBorderColor: =StarVisible14.BorderColor
-                PressedColor: =StarVisible14.Color
-                PressedFill: =StarVisible14.Fill
-                Size: =21
-                Text: ="*"
-                VerticalAlign: =VerticalAlign.Top
-                Visible: =false
-                Width: =30
-                Wrap: =false
-                Y: =Key12.Y
-                ZIndex: =4
-
-            Rectangle18 As rectangle:
-                BorderColor: =RGBA(0, 0, 255, 1)
-                DisabledFill: =Rectangle18.Fill
-                Fill: =RGBA(0, 0, 0, 0)
-                FocusedBorderColor: =Rectangle18.BorderColor
-                Height: =99.92592592592598
-                HoverFill: =Rectangle18.Fill
-                OnSelect: |-
-                    =Navigate(PriorityPage, ScreenTransition.Fade,{priority:Value8.Text})
-                PressedFill: =Rectangle18.Fill
-                TabIndex: =0
-                Width: =610
-                X: =30
-                ZIndex: =5
-
-            Rectangle16_3 As rectangle:
-                BorderColor: =RGBA(0, 0, 255, 1)
-                DisabledFill: =Rectangle16_3.Fill
-                Fill: =RGBA(204, 204, 204, 1)
-                FocusedBorderColor: =Rectangle16_3.BorderColor
-                Height: =2
-                HoverFill: =Rectangle16_3.Fill
-                PressedFill: =Rectangle16_3.Fill
-                TabIndex: =0
-                Width: =640
-                Y: =99.777777777778
-                ZIndex: =18
-
-            icon9_1 As icon.ChevronRight:
-                BorderColor: =RGBA(0, 0, 0, 1)
-                Color: =RGBA(115, 115, 115, 1)
-                DisabledBorderColor: =RGBA(56, 56, 56, 1)
-                DisabledFill: =icon9_1.Fill
-                FocusedBorderColor: =icon9_1.BorderColor
-                Height: =40
-                HoverBorderColor: =ColorFade(icon9_1.BorderColor, 20%)
-                HoverColor: =ColorFade(icon9_1.Color, 20%)
-                HoverFill: =icon9_1.Fill
-                Icon: =Icon.ChevronRight
-                OnSelect: |-
-                    =Navigate(PriorityPage, ScreenTransition.Fade,{priority:Value8.Text})
-                PressedBorderColor: =ColorFade(icon9_1.BorderColor, -20%)
-                PressedColor: =ColorFade(icon9_1.Color, -20%)
-                PressedFill: =icon9_1.Fill
-                TabIndex: =0
-                Width: =32
-                X: =586.6419753086417
-                Y: =30.765432098765433
-                ZIndex: =22
-
         DataCard9 As typedDataCard.textualEditCard:
             BorderColor: =RGBA(0, 0, 0, 1)
             BorderStyle: =BorderStyle.Solid
@@ -764,8 +479,8 @@ TicketDetailsPage As screen:
             Update: =Value10.Text
             Width: =640
             WidthFit: =false
-            X: =0.5
-            Y: =610.5
+            X: =0
+            Y: =2
             ZIndex: =5
 
             Key13 As label:
@@ -886,8 +601,8 @@ TicketDetailsPage As screen:
             Update: =Value12.Text
             Width: =640
             WidthFit: =false
-            X: =0.5
-            Y: =758.5
+            X: =0
+            Y: =3
             ZIndex: =6
 
             Key14 As label:
@@ -1008,8 +723,8 @@ TicketDetailsPage As screen:
             Update: =Value13.Text
             Width: =640
             WidthFit: =false
-            X: =0.5
-            Y: =906.5
+            X: =0
+            Y: =4
             ZIndex: =7
 
             Key16 As label:
@@ -1137,8 +852,8 @@ TicketDetailsPage As screen:
             Update: =Value16.Text
             Width: =640
             WidthFit: =false
-            X: =0.5
-            Y: =956.5
+            X: =0
+            Y: =5
             ZIndex: =8
 
             Key18 As label:
@@ -1267,8 +982,8 @@ TicketDetailsPage As screen:
             Update: =Value17.Text
             Width: =640
             WidthFit: =false
-            X: =333.18519121334873
-            Y: =1194.5
+            X: =0
+            Y: =6
             ZIndex: =9
 
             Key19 As label:
@@ -1444,8 +1159,8 @@ TicketDetailsPage As screen:
             Update: =Value18.Text
             Width: =640
             WidthFit: =false
-            X: =0.5
-            Y: =1328.5
+            X: =0
+            Y: =7
             ZIndex: =10
 
             Key20 As label:
@@ -1607,8 +1322,8 @@ TicketDetailsPage As screen:
             Update: =Value16_1.Text
             Width: =640
             WidthFit: =false
-            X: =0.5
-            Y: =1462.5
+            X: =0
+            Y: =8
             ZIndex: =11
 
             Key2 As label:
@@ -1718,7 +1433,7 @@ TicketDetailsPage As screen:
             Width: =640
             WidthFit: =false
             X: =0
-            Y: =1480.35483250528
+            Y: =9
             ZIndex: =12
 
             Key4 As label:
