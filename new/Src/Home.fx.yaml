@@ -1,0 +1,130 @@
+Home As screen:
+    BackgroundImage: =
+    Height: =Max(App.Height, App.DesignHeight)
+    Orientation: =If(Home.Width < Home.Height, Layout.Vertical, Layout.Horizontal)
+    Size: =1 + CountRows(App.SizeBreakpoints) - CountIf(App.SizeBreakpoints, Value >= Home.Width)
+    Width: =Max(App.Width, App.DesignWidth)
+
+    Rectangle1_9 As rectangle:
+        BorderColor: =RGBA(0, 0, 255, 1)
+        DisabledFill: =Rectangle1_9.Fill
+        Fill: =RGBA(109, 49, 162, 1)
+        FocusedBorderColor: =Rectangle1_9.BorderColor
+        Height: =90
+        HoverFill: =Rectangle1_9.Fill
+        PressedFill: =Rectangle1_9.Fill
+        TabIndex: =0
+        Width: =640
+        ZIndex: =4
+
+    TextBox1_4 As label:
+        Align: =Align.Center
+        BorderColor: =RGBA(0, 0, 0, 1)
+        Color: =RGBA(255, 255, 255, 1)
+        FocusedBorderColor: =TextBox1_4.BorderColor
+        FontWeight: =Lighter
+        Height: =88
+        HoverBorderColor: =TextBox1_4.BorderColor
+        HoverColor: =TextBox1_4.Color
+        HoverFill: =TextBox1_4.Fill
+        PressedBorderColor: =TextBox1_4.BorderColor
+        PressedColor: =TextBox1_4.Color
+        PressedFill: =TextBox1_4.Fill
+        Size: =28
+        Text: ="SONIC"
+        Width: =464
+        X: =88
+        ZIndex: =5
+
+    BarcodeScanner1 As barcodeScanner:
+        DisabledBorderColor: =ColorFade(Self.BorderColor, 20%)
+        Fill: =RGBA(109, 49, 162, 1)
+        Height: =400
+        RadiusBottomLeft: =200
+        RadiusBottomRight: =200
+        RadiusTopLeft: =200
+        RadiusTopRight: =200
+        Size: =35
+        Text: |-
+            ="
+            
+            
+            
+            SCAN"
+        Width: =400
+        X: =108
+        Y: =272
+        ZIndex: =9
+
+    Image2 As image:
+        Height: =209
+        Image: ='qr-code-violet-color'
+        Width: =233
+        X: =191
+        Y: =340
+        ZIndex: =10
+
+    Rectangle3 As rectangle:
+        BorderColor: =RGBA(109, 49, 162, 1)
+        Fill: =RGBA(109, 49, 162, 1)
+        Height: =90
+        Width: =640
+        Y: =1046
+        ZIndex: =11
+
+    Icon2 As icon.Add:
+        BorderColor: =RGBA(255, 255, 255, 1)
+        Color: =RGBA(255, 255, 255, 1)
+        Height: =70
+        Icon: =Icon.Home
+        PaddingBottom: =5
+        PaddingLeft: =5
+        PaddingRight: =5
+        PaddingTop: =5
+        Width: =70
+        X: =40
+        Y: =1059
+        ZIndex: =12
+
+    Icon3 As icon.Add:
+        BorderColor: =RGBA(255, 255, 255, 1)
+        Color: =RGBA(255, 255, 255, 1)
+        Height: =70
+        Icon: =Icon.Help
+        PaddingBottom: =5
+        PaddingLeft: =5
+        PaddingRight: =5
+        PaddingTop: =5
+        Width: =70
+        X: =200
+        Y: =1059
+        ZIndex: =13
+
+    Icon4 As icon.Add:
+        BorderColor: =RGBA(255, 255, 255, 1)
+        Color: =RGBA(255, 255, 255, 1)
+        Height: =70
+        Icon: =Icon.Money
+        PaddingBottom: =5
+        PaddingLeft: =5
+        PaddingRight: =5
+        PaddingTop: =5
+        Width: =70
+        X: =360
+        Y: =1059
+        ZIndex: =14
+
+    Icon5 As icon.Add:
+        BorderColor: =RGBA(255, 255, 255, 1)
+        Color: =RGBA(255, 255, 255, 1)
+        Height: =70
+        Icon: =Icon.History
+        PaddingBottom: =5
+        PaddingLeft: =5
+        PaddingRight: =5
+        PaddingTop: =5
+        Width: =70
+        X: =520
+        Y: =1059
+        ZIndex: =15
+

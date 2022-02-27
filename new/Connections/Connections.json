@@ -1,6 +1,6 @@
 {
   "a30c0a2c-2fb6-4fcc-b91f-b58c03a8a53e": {
-    "connectionInstanceId": "/providers/microsoft.powerapps/apis/shared_onedrive/connections/7fc67ef7b8a14e51b2307304af1826cc",
+    "connectionInstanceId": "/providers/microsoft.powerapps/apis/shared_onedrive/connections/b99f6c352b0b4781bbe1a63230d5919e",
     "connectionParameters": {
       "sku": "Enterprise"
     },
@@ -21,7 +21,7 @@
     "id": "a30c0a2c-2fb6-4fcc-b91f-b58c03a8a53e"
   },
   "d0539e3b-6610-4ff4-a643-c3f95dce98b3": {
-    "connectionInstanceId": "/providers/microsoft.powerapps/apis/shared_excel/connections/920c0737739648b284f6a4e5efcddfa4",
+    "connectionInstanceId": "/providers/microsoft.powerapps/apis/shared_excel/connections/d76c21c4ff0e4207bb09bace652821c9",
     "connectionParameters": {
       "sku": "Enterprise"
     },

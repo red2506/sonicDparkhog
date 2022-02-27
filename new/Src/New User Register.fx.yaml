@@ -143,7 +143,7 @@
         Item: =Defaults(Tickets)
         NumberOfColumns: =1
         OnSuccess: |-
-            =Navigate(TicketsPage, ScreenTransition.Fade,{type:"New"});
+            =Navigate(Home, ScreenTransition.Fade,{type:"New"});
             ResetForm(NewTicketForm)
         Width: =640
         Y: =88

@@ -22,7 +22,7 @@ TicketDetailsPage As screen:
             HoverFill: =Rectangle1_14.Fill
             OnSelect: |-
                 =ResetForm(TicketDetailsForm);
-                Navigate(TicketsPage, ScreenTransition.Fade)
+                Navigate(Home, ScreenTransition.Fade)
             PressedFill: =Rectangle1_14.Fill
             TabIndex: =0
             Width: =88
@@ -41,7 +41,7 @@ TicketDetailsPage As screen:
             Icon: =Icon.ChevronLeft
             OnSelect: |-
                 =ResetForm(TicketDetailsForm);
-                Navigate(TicketsPage, ScreenTransition.Fade)
+                Navigate(Home, ScreenTransition.Fade)
             PressedBorderColor: =ColorFade(icon6_2.BorderColor, -20%)
             PressedColor: =ColorFade(icon6_2.Color, -20%)
             PressedFill: =icon6_2.Fill
@@ -175,7 +175,7 @@ TicketDetailsPage As screen:
         Height: =969.5376147198418
         Item: =TicketsGallery.Selected
         NumberOfColumns: =1
-        OnSuccess: =Navigate(TicketsPage,ScreenTransition.Fade)
+        OnSuccess: =Navigate(Home,ScreenTransition.Fade)
         Width: =640
         Y: =86.22579463835689
         ZIndex: =16
