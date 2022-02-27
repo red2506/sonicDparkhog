@@ -45,65 +45,6 @@ TicketsPage As screen:
             Y: =28
             ZIndex: =7
 
-    Group11 As group:
-        Height: =88
-        Width: =88
-        X: =0
-        Y: =87
-        ZIndex: =2
-
-        Rectangle12 As rectangle:
-            BorderColor: =RGBA(0, 0, 255, 1)
-            DisabledFill: =Rectangle12.Fill
-            Fill: =RGBA(29, 33, 35, 1)
-            FocusedBorderColor: =Rectangle12.BorderColor
-            Height: =88
-            HoverFill: =Rectangle12.Fill
-            OnSelect: |-
-                =Navigate(FilterPage, ScreenTransition.Fade,{type:type })
-            PressedFill: =Rectangle12.Fill
-            TabIndex: =0
-            Width: =88
-            Y: =87
-            ZIndex: =10
-
-        icon7 As icon.Filter:
-            BorderColor: =RGBA(0, 0, 0, 1)
-            Color: =RGBA(255, 255, 255, 1)
-            DisabledBorderColor: =RGBA(56, 56, 56, 1)
-            DisabledFill: =icon7.Fill
-            FocusedBorderColor: =icon7.BorderColor
-            Height: =40
-            HoverBorderColor: =ColorFade(icon7.BorderColor, 20%)
-            HoverColor: =ColorFade(icon7.Color, 20%)
-            HoverFill: =icon7.Fill
-            Icon: =Icon.Filter
-            OnSelect: |-
-                =Navigate(FilterPage, ScreenTransition.Fade,{type:type })
-            PressedBorderColor: =ColorFade(icon7.BorderColor, -20%)
-            PressedColor: =ColorFade(icon7.Color, -20%)
-            PressedFill: =icon7.Fill
-            TabIndex: =0
-            Width: =40
-            X: =24
-            Y: =111
-            ZIndex: =11
-
-    Rectangle1_11 As rectangle:
-        BorderColor: =RGBA(0, 0, 255, 1)
-        DisabledFill: =Rectangle1_11.Fill
-        Fill: =RGBA(245,245,245,0)
-        FocusedBorderColor: =Rectangle1_11.BorderColor
-        Height: =88.59880239520959
-        HoverFill: =Rectangle1_11.Fill
-        OnSelect: |-
-            =Navigate(FilterPage, ScreenTransition.Fade,{type:type })
-        PressedFill: =Rectangle1_11.Fill
-        TabIndex: =0
-        Width: =640
-        Y: =87
-        ZIndex: =3
-
     Rectangle1_9 As rectangle:
         BorderColor: =RGBA(0, 0, 255, 1)
         DisabledFill: =Rectangle1_9.Fill
@@ -130,468 +71,10 @@ TicketsPage As screen:
         PressedColor: =TextBox1_4.Color
         PressedFill: =TextBox1_4.Fill
         Size: =28
-        Text: ="Tickets"
+        Text: ="Home"
         Width: =464
         X: =88
         ZIndex: =5
-
-    TicketsGallery As gallery.textualGalleryVertical:
-        DisabledBorderColor: =TicketsGallery.BorderColor
-        DisabledFill: =TicketsGallery.Fill
-        Fill: =RGBA(242, 244, 249, 1)
-        Height: =959.9999999999998
-        HoverBorderColor: =TicketsGallery.BorderColor
-        HoverFill: =TicketsGallery.Fill
-        Items: |-
-            = If(type="All",
-                Tickets,
-                type="Tickets older than 3 days",
-                     Filter(Tickets,   DateCreated <> datetype && DateCreated <> Text(Today()), DateCreated <> Text(DateAdd(Today(), -2)),DateCreated <> Text(DateAdd(Today(), -1))|| DateClosed <> datetype && DateClosed <> Text(Today()), DateClosed <> Text(DateAdd(Today(),-2)),DateClosed <> Text(DateAdd(Today(), -1))),
-                type="Tickets opened today",Filter(Tickets,datetype in DateCreated),
-                type="Tickets closed today",Filter(Tickets,datetype in DateClosed),Filter(Tickets,type in Status))
-        Layout: =Layout.Vertical
-        LoadingSpinnerColor: =TicketsGallery.BorderColor
-        PressedBorderColor: =TicketsGallery.BorderColor
-        PressedFill: =TicketsGallery.Fill
-        ShowScrollbar: =false
-        TemplatePadding: =0
-        TemplateSize: =223.0699504854464
-        Y: =174.92224012892828
-        ZIndex: =8
-
-        Rectangle1_12 As rectangle:
-            BorderColor: =RGBA(0, 0, 255, 1)
-            DisabledFill: =Rectangle1_12.Fill
-            Fill: =RGBA(227,227,227,1)
-            FocusedBorderColor: =Rectangle1_12.BorderColor
-            Height: =0
-            HoverFill: =Rectangle1_12.Fill
-            PressedFill: =Rectangle1_12.Fill
-            TabIndex: =0
-            Width: =640
-            Y: =222.44680259615347
-            ZIndex: =1
-
-        Rectangle14 As rectangle:
-            BorderColor: =RGBA(0, 0, 255, 1)
-            DisabledFill: =Rectangle14.Fill
-            Fill: =RGBA(204, 204, 204, 1)
-            FocusedBorderColor: =Rectangle14.BorderColor
-            Height: =1
-            HoverFill: =Rectangle14.Fill
-            PressedFill: =Rectangle14.Fill
-            TabIndex: =0
-            Width: =640
-            Y: =222.20408163265324
-            ZIndex: =2
-
-        Group5 As group:
-            Height: =223
-            Width: =640
-            X: =0
-            Y: =0
-            ZIndex: =3
-
-            Rectangle6 As rectangle:
-                BorderColor: =RGBA(0, 0, 255, 1)
-                BorderThickness: =2
-                DisabledFill: =Rectangle6.Fill
-                Fill: =RGBA(0, 0, 0, 0)
-                FocusedBorderColor: =Rectangle6.BorderColor
-                Height: =223
-                HoverFill: =Rectangle6.Fill
-                OnSelect: |-
-                    =EditForm(TicketDetailsForm);
-                    Navigate(TicketDetailsPage,ScreenTransition.Fade,
-                        {EditRecord:ThisItem,
-                        type:ThisItem.Status,
-                        assign:ThisItem.AssignedTo,
-                        area1:ThisItem.AccountName,
-                        priority:ThisItem.Priority,
-                        disabledcomment:true,
-                        disabledsubject:true,
-                        disableddesc:true,
-                        subjv:true,
-                        descv:true,
-                        commv:true})
-                PressedFill: =Rectangle6.Fill
-                TabIndex: =0
-                Width: =640
-                ZIndex: =4
-
-            Heading1 As label:
-                Align: =Center
-                Color: =RGBA(40, 40, 40, 1)
-                FocusedBorderColor: =Heading1.BorderColor
-                FontWeight: =Normal
-                Height: =44.04591836734697
-                HoverBorderColor: =Heading1.BorderColor
-                HoverColor: =Heading1.Color
-                HoverFill: =Heading1.Fill
-                OnSelect: |-
-                    =EditForm(TicketDetailsForm);
-                    Navigate(TicketDetailsPage,ScreenTransition.Fade,
-                        {EditRecord:ThisItem,
-                        type:ThisItem.Status,
-                        assign:ThisItem.AssignedTo,
-                        area1:ThisItem.AccountName,
-                        priority:ThisItem.Priority,
-                        disabledcomment:true,
-                        disabledsubject:true,
-                        disableddesc:true,
-                        subjv:true,
-                        descv:true,
-                        commv:true})
-                PaddingBottom: =0
-                PaddingLeft: =0
-                PaddingRight: =0
-                PaddingTop: =0
-                PressedBorderColor: =Heading1.BorderColor
-                PressedColor: =Heading1.Color
-                PressedFill: =Heading1.Fill
-                Size: =16
-                Text: =Owner
-                Width: =250
-                Wrap: =false
-                X: =195
-                Y: =3.954081632653029
-                ZIndex: =5
-
-            Subtitle1 As label:
-                Color: =RGBA(29, 33, 35, 1)
-                FocusedBorderColor: =Subtitle1.BorderColor
-                FontWeight: =Semibold
-                Height: =58
-                HoverBorderColor: =Subtitle1.BorderColor
-                HoverColor: =Subtitle1.Color
-                HoverFill: =Subtitle1.Fill
-                OnSelect: |-
-                    =EditForm(TicketDetailsForm);
-                    Navigate(TicketDetailsPage,ScreenTransition.Fade,
-                        {EditRecord:ThisItem,
-                        type:ThisItem.Status,
-                        assign:ThisItem.AssignedTo,
-                        area1:ThisItem.AccountName,
-                        priority:ThisItem.Priority,
-                        disabledcomment:true,
-                        disabledsubject:true,
-                        disableddesc:true,
-                        subjv:true,
-                        descv:true,
-                        commv:true})
-                PaddingBottom: =0
-                PaddingLeft: =0
-                PaddingRight: =0
-                PaddingTop: =0
-                PressedBorderColor: =Subtitle1.BorderColor
-                PressedColor: =Subtitle1.Color
-                PressedFill: =Subtitle1.Fill
-                Size: =22
-                Text: =Subject
-                Width: =571
-                Wrap: =false
-                X: =29
-                Y: =47.76530612244899
-                ZIndex: =6
-
-            Body1 As label:
-                Color: =RGBA(40, 40, 40, 1)
-                FocusedBorderColor: =Body1.BorderColor
-                FontWeight: =Normal
-                Height: =70.85714285714289
-                HoverBorderColor: =Body1.BorderColor
-                HoverColor: =Body1.Color
-                HoverFill: =Body1.Fill
-                OnSelect: |-
-                    =EditForm(TicketDetailsForm);
-                    Navigate(TicketDetailsPage,ScreenTransition.Fade,
-                        {EditRecord:ThisItem,
-                        type:ThisItem.Status,
-                        assign:ThisItem.AssignedTo,
-                        area1:ThisItem.AccountName,
-                        priority:ThisItem.Priority,
-                        disabledcomment:true,
-                        disabledsubject:true,
-                        disableddesc:true,
-                        subjv:true,
-                        descv:true,
-                        commv:true})
-                PaddingBottom: =0
-                PaddingLeft: =0
-                PaddingRight: =0
-                PaddingTop: =0
-                PressedBorderColor: =Body1.BorderColor
-                PressedColor: =Body1.Color
-                PressedFill: =Body1.Fill
-                Text: =Description
-                VerticalAlign: =Top
-                Width: =514
-                X: =29.041666666666668
-                Y: =98.51785714285692
-                ZIndex: =7
-
-            icon8 As icon.ChevronRight:
-                BorderColor: =RGBA(0, 0, 0, 1)
-                Color: =RGBA(115, 115, 115, 1)
-                DisabledBorderColor: =RGBA(56, 56, 56, 1)
-                DisabledFill: =icon8.Fill
-                FocusedBorderColor: =icon8.BorderColor
-                Height: =40
-                HoverBorderColor: =ColorFade(icon8.BorderColor, 20%)
-                HoverColor: =ColorFade(icon8.Color, 20%)
-                HoverFill: =icon8.Fill
-                Icon: =Icon.ChevronRight
-                OnSelect: |-
-                    =EditForm(TicketDetailsForm);
-                    Navigate(TicketDetailsPage,ScreenTransition.Fade,
-                        {EditRecord:ThisItem,
-                        type:ThisItem.Status,
-                        assign:ThisItem.AssignedTo,
-                        area1:ThisItem.AccountName,
-                        priority:ThisItem.Priority,
-                        disabledcomment:true,
-                        disabledsubject:true,
-                        disableddesc:true,
-                        subjv:true,
-                        descv:true,
-                        commv:true})
-                PressedBorderColor: =ColorFade(icon8.BorderColor, -20%)
-                PressedColor: =ColorFade(icon8.Color, -20%)
-                PressedFill: =icon8.Fill
-                TabIndex: =0
-                Width: =32
-                X: =595.6573962918501
-                Y: =97.5
-                ZIndex: =8
-
-            TextBox5_1 As label:
-                Align: =Left
-                BorderColor: =RGBA(0, 0, 0, 1)
-                Fill: =RGBA(217, 216, 217, 0)
-                FocusedBorderColor: =TextBox5_1.BorderColor
-                FontWeight: =Lighter
-                Height: =52
-                HoverBorderColor: =TextBox5_1.BorderColor
-                HoverColor: =TextBox5_1.Color
-                HoverFill: =TextBox5_1.Fill
-                OnSelect: |-
-                    =EditForm(TicketDetailsForm);
-                    Navigate(TicketDetailsPage,ScreenTransition.Fade,
-                        {EditRecord:ThisItem,
-                        type:ThisItem.Status,
-                        assign:ThisItem.AssignedTo,
-                        area1:ThisItem.AccountName,
-                        priority:ThisItem.Priority,
-                        disabledcomment:true,
-                        disabledsubject:true,
-                        disableddesc:true,
-                        subjv:true,
-                        descv:true,
-                        commv:true})
-                PressedBorderColor: =TextBox5_1.BorderColor
-                PressedColor: =TextBox5_1.Color
-                PressedFill: =TextBox5_1.Fill
-                Size: =16
-                Text: |-
-                    ="Assigned to:"
-                Width: =141.0816326530612
-                X: =24.91836734693878
-                Y: =167.32653061224505
-                ZIndex: =9
-
-            TextBox5_2 As label:
-                Align: =Left
-                BorderColor: =RGBA(0, 0, 0, 1)
-                Color: =RGBA(40, 40, 40, 1)
-                Fill: =RGBA(217, 216, 217, 0)
-                FocusedBorderColor: =TextBox5_2.BorderColor
-                Height: =52
-                HoverBorderColor: =TextBox5_2.BorderColor
-                HoverColor: =TextBox5_2.Color
-                HoverFill: =TextBox5_2.Fill
-                OnSelect: |-
-                    =EditForm(TicketDetailsForm);
-                    Navigate(TicketDetailsPage,ScreenTransition.Fade,
-                        {EditRecord:ThisItem,
-                        type:ThisItem.Status,
-                        assign:ThisItem.AssignedTo,
-                        area1:ThisItem.AccountName,
-                        priority:ThisItem.Priority,
-                        disabledcomment:true,
-                        disabledsubject:true,
-                        disableddesc:true,
-                        subjv:true,
-                        descv:true,
-                        commv:true})
-                PressedBorderColor: =TextBox5_2.BorderColor
-                PressedColor: =TextBox5_2.Color
-                PressedFill: =TextBox5_2.Fill
-                Size: =16
-                Text: =If(IsBlank(AssignedTo),"None",AssignedTo)
-                Width: =225
-                X: =151.915816326531
-                Y: =167.631802721088
-                ZIndex: =10
-
-            Heading1_1 As label:
-                Align: =Left
-                FocusedBorderColor: =Heading1_1.BorderColor
-                FontWeight: =Lighter
-                Height: =43.95408163265303
-                HoverBorderColor: =Heading1_1.BorderColor
-                HoverColor: =Heading1_1.Color
-                HoverFill: =Heading1_1.Fill
-                OnSelect: |-
-                    =EditForm(TicketDetailsForm);
-                    Navigate(TicketDetailsPage,ScreenTransition.Fade,
-                        {EditRecord:ThisItem,
-                        type:ThisItem.Status,
-                        assign:ThisItem.AssignedTo,
-                        area1:ThisItem.AccountName,
-                        priority:ThisItem.Priority,
-                        disabledcomment:true,
-                        disabledsubject:true,
-                        disableddesc:true,
-                        subjv:true,
-                        descv:true,
-                        commv:true})
-                PaddingBottom: =0
-                PaddingLeft: =0
-                PaddingRight: =0
-                PaddingTop: =0
-                PressedBorderColor: =Heading1_1.BorderColor
-                PressedColor: =Heading1_1.Color
-                PressedFill: =Heading1_1.Fill
-                Size: =16
-                Text: |-
-                    ="Ticket ID: "
-                Width: =101
-                Wrap: =false
-                X: =29
-                Y: =4
-                ZIndex: =11
-
-            Heading1_2 As label:
-                Align: =Right
-                Color: =RGBA(40, 40, 40, 1)
-                FocusedBorderColor: =Heading1_2.BorderColor
-                FontWeight: =Normal
-                Height: =44.04591836734697
-                HoverBorderColor: =Heading1_2.BorderColor
-                HoverColor: =Heading1_2.Color
-                HoverFill: =Heading1_2.Fill
-                OnSelect: |-
-                    =EditForm(TicketDetailsForm);
-                    Navigate(TicketDetailsPage,ScreenTransition.Fade,
-                        {EditRecord:ThisItem,
-                        type:ThisItem.Status,
-                        assign:ThisItem.AssignedTo,
-                        area1:ThisItem.AccountName,
-                        priority:ThisItem.Priority,
-                        disabledcomment:true,
-                        disabledsubject:true,
-                        disableddesc:true,
-                        subjv:true,
-                        descv:true,
-                        commv:true})
-                PaddingBottom: =0
-                PaddingLeft: =0
-                PaddingRight: =0
-                PaddingTop: =0
-                PressedBorderColor: =Heading1_2.BorderColor
-                PressedColor: =Heading1_2.Color
-                PressedFill: =Heading1_2.Fill
-                Size: =16
-                Text: =DateCreated
-                Width: =187.79365079365107
-                Wrap: =false
-                X: =433.0000000000001
-                Y: =3.954081632653028
-                ZIndex: =12
-
-            Rectangle15 As rectangle:
-                BorderColor: =RGBA(0, 0, 255, 1)
-                DisabledFill: =Rectangle15.Fill
-                Fill: =If(ThisItem.Status="In progress",RGBA(195,179,5,1),If(ThisItem.Status="On hold",RGBA(227,48,12,1),If(ThisItem.Status="Closed",RGBA(71,185,50,1),RGBA(56,56,153,1))))
-                FocusedBorderColor: =Rectangle15.BorderColor
-                Height: =222.3
-                HoverFill: =Rectangle15.Fill
-                OnSelect: |-
-                    =EditForm(TicketDetailsForm);
-                    Navigate(TicketDetailsPage,ScreenTransition.Fade,
-                        {EditRecord:ThisItem,
-                        type:ThisItem.Status,
-                        assign:ThisItem.AssignedTo,
-                        area1:ThisItem.AccountName,
-                        priority:ThisItem.Priority,
-                        disabledcomment:true,
-                        disabledsubject:true,
-                        disableddesc:true,
-                        subjv:true,
-                        descv:true,
-                        commv:true})
-                PressedFill: =Rectangle15.Fill
-                TabIndex: =0
-                Width: =8
-                ZIndex: =13
-
-        Heading1_3 As label:
-            Align: =Left
-            Color: =RGBA(40, 40, 40, 1)
-            FocusedBorderColor: =Heading1_3.BorderColor
-            FontWeight: =Normal
-            Height: =43.954081632653
-            HoverBorderColor: =Heading1_3.BorderColor
-            HoverColor: =Heading1_3.Color
-            HoverFill: =Heading1_3.Fill
-            OnSelect: |-
-                =Navigate(TicketDetailsPage, ScreenTransition.Fade,
-                    {EditRecord:ThisItem,
-                    type:ThisItem.Status,
-                    assign: ThisItem.AssignedTo,
-                    area1: ThisItem.AccountName, 
-                    priority:ThisItem.Priority,
-                    disabledcomment:true,
-                    disabledsubject:true,
-                    disableddesc:true})
-            PaddingBottom: =0
-            PaddingLeft: =0
-            PaddingRight: =0
-            PaddingTop: =0
-            PressedBorderColor: =Heading1_3.BorderColor
-            PressedColor: =Heading1_3.Color
-            PressedFill: =Heading1_3.Fill
-            Size: =16
-            Text: = ID
-            Width: =107.57142857142852
-            Wrap: =false
-            X: =127.57142857142868
-            Y: =4
-            ZIndex: =14
-
-    TextBox4_6 As label:
-        BorderColor: =RGBA(0, 0, 0, 1)
-        Color: =RGBA(255, 255, 255, 1)
-        Fill: =RGBA(29, 33, 35, 1)
-        FocusedBorderColor: =TextBox4_6.BorderColor
-        Height: =88
-        HoverBorderColor: =TextBox4_6.BorderColor
-        HoverColor: =TextBox4_6.Color
-        HoverFill: =TextBox4_6.Fill
-        OnSelect: |-
-            =Navigate(FilterPage, ScreenTransition.Fade,{type:type})
-        PaddingBottom: =0
-        PaddingLeft: =88
-        PaddingRight: =0
-        PaddingTop: =0
-        PressedBorderColor: =TextBox4_6.BorderColor
-        PressedColor: =TextBox4_6.Color
-        PressedFill: =TextBox4_6.Fill
-        Size: =21
-        Text: =type
-        Width: =639.9999999999998
-        Y: =87
-        ZIndex: =9
 
     icon5 As icon.Add:
         BorderColor: =RGBA(0, 0, 0, 1)
@@ -638,4 +121,88 @@ TicketsPage As screen:
         Width: =88
         X: =552
         ZIndex: =15
+
+    BarcodeScanner1 As barcodeScanner:
+        Fill: =RGBA(109, 49, 162, 1)
+        Height: =400
+        RadiusBottomLeft: =200
+        RadiusBottomRight: =200
+        RadiusTopLeft: =200
+        RadiusTopRight: =200
+        Size: =35
+        Text: |-
+            ="
+            
+            
+            
+            
+            Scan"
+        Width: =400
+        X: =108
+        Y: =272
+        ZIndex: =16
+
+    Image2 As image:
+        Height: =209
+        Image: ='qr-code-violet-color'
+        Width: =233
+        X: =191
+        Y: =340
+        ZIndex: =17
+
+    Rectangle3 As rectangle:
+        Fill: =RGBA(109, 49, 162, 1)
+        Height: =90
+        Width: =640
+        Y: =1046
+        ZIndex: =18
+
+    Icon1 As icon.Add:
+        Color: =RGBA(255, 255, 255, 1)
+        Height: =70
+        Icon: =Icon.Home
+        PaddingBottom: =5
+        PaddingLeft: =5
+        PaddingRight: =5
+        PaddingTop: =5
+        Width: =70
+        X: =40
+        Y: =1059
+        ZIndex: =19
+
+    Icon2 As icon.Add:
+        Color: =RGBA(255, 255, 255, 1)
+        DisabledColor: =RGBA(255, 255, 255, 1)
+        Height: =70
+        Icon: =Icon.Help
+        PaddingBottom: =5
+        PaddingLeft: =5
+        PaddingRight: =5
+        PaddingTop: =5
+        Width: =70
+        X: =200
+        Y: =1059
+        ZIndex: =20
+
+    Icon3 As icon.Add:
+        Color: =RGBA(255, 255, 255, 1)
+        Height: =70
+        Icon: =Icon.Money
+        PaddingLeft: =5
+        PaddingTop: =5
+        Width: =70
+        X: =360
+        Y: =1059
+        ZIndex: =21
+
+    Icon4 As icon.Add:
+        Color: =RGBA(255, 255, 255, 1)
+        Height: =70
+        Icon: =Icon.History
+        PaddingLeft: =5
+        PaddingTop: =5
+        Width: =70
+        X: =520
+        Y: =1059
+        ZIndex: =22
 
