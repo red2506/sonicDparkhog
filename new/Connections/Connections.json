@@ -1,0 +1,86 @@
+{
+  "a30c0a2c-2fb6-4fcc-b91f-b58c03a8a53e": {
+    "connectionInstanceId": "/providers/microsoft.powerapps/apis/shared_onedrive/connections/7fc67ef7b8a14e51b2307304af1826cc",
+    "connectionParameters": {
+      "sku": "Enterprise"
+    },
+    "connectionRef": {
+      "apiTier": "Standard",
+      "displayName": "OneDrive",
+      "iconUri": "https://connectoricons-prod.azureedge.net/depfeife/special-train/1.0.1489.2478/onedrive/icon.png",
+      "id": "/providers/microsoft.powerapps/apis/shared_onedrive",
+      "parameterHints": {},
+      "parameterHintsV2": {}
+    },
+    "datasets": {},
+    "dataSources": [],
+    "dependencies": {},
+    "dependents": [
+      "d0539e3b-6610-4ff4-a643-c3f95dce98b3"
+    ],
+    "id": "a30c0a2c-2fb6-4fcc-b91f-b58c03a8a53e"
+  },
+  "d0539e3b-6610-4ff4-a643-c3f95dce98b3": {
+    "connectionInstanceId": "/providers/microsoft.powerapps/apis/shared_excel/connections/920c0737739648b284f6a4e5efcddfa4",
+    "connectionParameters": {
+      "sku": "Enterprise"
+    },
+    "connectionRef": {
+      "apiTier": "Standard",
+      "displayName": "Excel",
+      "iconUri": "https://connectoricons-prod.azureedge.net/releases/v1.0.1542/1.0.1542.2635/excel/icon.png",
+      "id": "/providers/microsoft.powerapps/apis/shared_excel",
+      "parameterHints": {
+        "a30c0a2c-2fb6-4fcc-b91f-b58c03a8a53e": {
+          "value": "fileSource"
+        }
+      },
+      "parameterHintsV2": {
+        "fileSource": {
+          "value": "a30c0a2c-2fb6-4fcc-b91f-b58c03a8a53e"
+        }
+      }
+    },
+    "datasets": {
+      "DD1FC7CB371062F8!122": {
+        "dataSources": {
+          "AccountNameTypes": {
+            "tableName": "AccountNameTypes"
+          },
+          "Attendants": {
+            "tableName": "Attendants"
+          },
+          "CaseStatus": {
+            "tableName": "CaseStatus"
+          },
+          "Filterby": {
+            "tableName": "Filterby"
+          },
+          "PriorityTypes": {
+            "tableName": "PriorityTypes"
+          },
+          "Tickets": {
+            "tableName": "Tickets"
+          },
+          "TicketTypes": {
+            "tableName": "TicketTypes"
+          }
+        }
+      }
+    },
+    "dataSources": [
+      "Tickets",
+      "TicketTypes",
+      "Filterby",
+      "CaseStatus",
+      "PriorityTypes",
+      "Attendants",
+      "AccountNameTypes"
+    ],
+    "dependencies": {
+      "fileSource": "a30c0a2c-2fb6-4fcc-b91f-b58c03a8a53e"
+    },
+    "dependents": [],
+    "id": "d0539e3b-6610-4ff4-a643-c3f95dce98b3"
+  }
+}

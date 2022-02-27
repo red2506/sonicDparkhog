@@ -1,0 +1,598 @@
+HomePage As screen:
+    Fill: =RGBA(245, 245, 245, 1)
+    Height: =Max(App.Height, App.DesignHeight)
+    OnVisible: =Reset(TextInput1)
+    Orientation: =If(HomePage.Width < HomePage.Height, Layout.Vertical, Layout.Horizontal)
+    Size: =1 + CountRows(App.SizeBreakpoints) - CountIf(App.SizeBreakpoints, Value >= HomePage.Width)
+    Width: =Max(App.Width, App.DesignWidth)
+
+    Group1 As group:
+        Height: =88
+        Width: =88
+        X: =552
+        Y: =0
+        ZIndex: =1
+
+        Rectangle1_1 As rectangle:
+            BorderColor: =RGBA(0, 0, 255, 1)
+            DisabledFill: =Rectangle1_1.Fill
+            Fill: =RGBA(62,96,170,0)
+            FocusedBorderColor: =Rectangle1_1.BorderColor
+            Height: =88
+            HoverFill: =Rectangle1_1.Fill
+            OnSelect: |-
+                =Navigate('New User Register', ScreenTransition.Fade,{new_reset:false});
+                UpdateContext({new_reset:true})
+            PressedFill: =Rectangle1_1.Fill
+            TabIndex: =0
+            Width: =88
+            X: =552
+            ZIndex: =12
+
+        icon1 As icon.Add:
+            BorderColor: =RGBA(0, 0, 0, 1)
+            Color: =RGBA(255, 255, 255, 1)
+            DisabledBorderColor: =RGBA(56, 56, 56, 1)
+            DisabledFill: =icon1.Fill
+            FocusedBorderColor: =icon1.BorderColor
+            Height: =40
+            HoverBorderColor: =ColorFade(icon1.BorderColor, 20%)
+            HoverColor: =ColorFade(icon1.Color, 20%)
+            HoverFill: =icon1.Fill
+            Icon: =Icon.Add
+            OnSelect: |-
+                =Navigate('New User Register', ScreenTransition.Fade,{new_reset:false});
+                UpdateContext({new_reset:true})
+            PressedBorderColor: =ColorFade(icon1.BorderColor, -20%)
+            PressedColor: =ColorFade(icon1.Color, -20%)
+            PressedFill: =icon1.Fill
+            TabIndex: =0
+            Width: =40
+            X: =576
+            Y: =24
+            ZIndex: =13
+
+    Group6 As group:
+        Height: =124.285714285714
+        Width: =168
+        X: =26.2037037037038
+        Y: =319.428571428571
+        ZIndex: =2
+
+        TextBox2_7 As label:
+            Align: =Center
+            BorderColor: =RGBA(0, 0, 0, 1)
+            Color: =RGBA(195,179,5,1)
+            FocusedBorderColor: =TextBox2_7.BorderColor
+            FontWeight: =Lighter
+            Height: =80
+            HoverBorderColor: =TextBox2_7.BorderColor
+            HoverColor: =TextBox2_7.Color
+            HoverFill: =TextBox2_7.Fill
+            OnSelect: |-
+                =Navigate(TicketsPage,ScreenTransition.Fade,{type:"In Progress"})
+            PressedBorderColor: =TextBox2_7.BorderColor
+            PressedColor: =TextBox2_7.Color
+            PressedFill: =TextBox2_7.Fill
+            Size: =44
+            Text: =CountRows(Filter(Tickets,Status="In progress"))
+            Width: =168
+            X: =26.2037037037038
+            Y: =319.42857142857133
+            ZIndex: =21
+
+        TextBox2_2 As label:
+            Align: =Center
+            BorderColor: =RGBA(0, 0, 0, 1)
+            Color: =RGBA(195,179,5,1)
+            FocusedBorderColor: =TextBox2_2.BorderColor
+            FontWeight: =Normal
+            Height: =70
+            HoverBorderColor: =TextBox2_2.BorderColor
+            HoverColor: =TextBox2_2.Color
+            HoverFill: =TextBox2_2.Fill
+            OnSelect: |-
+                =Navigate(TicketsPage,ScreenTransition.Fade,{type:"In Progress"})
+            PressedBorderColor: =TextBox2_2.BorderColor
+            PressedColor: =TextBox2_2.Color
+            PressedFill: =TextBox2_2.Fill
+            Size: =18
+            Text: ="In progress"
+            Width: =168
+            X: =26.2037037037038
+            Y: =373.7142857142853
+            ZIndex: =22
+
+    Group7 As group:
+        Height: =124.285714285714
+        Width: =168.00000000000003
+        X: =236.105263157895
+        Y: =319.428571428571
+        ZIndex: =3
+
+        TextBox2_8 As label:
+            Align: =Center
+            BorderColor: =RGBA(0, 0, 0, 1)
+            Color: =RGBA(71,185,50,1)
+            FocusedBorderColor: =TextBox2_8.BorderColor
+            FontWeight: =Lighter
+            Height: =80
+            HoverBorderColor: =TextBox2_8.BorderColor
+            HoverColor: =TextBox2_8.Color
+            HoverFill: =TextBox2_8.Fill
+            OnSelect: |-
+                =Navigate(TicketsPage,ScreenTransition.Fade,{type:"Closed"})
+            PressedBorderColor: =TextBox2_8.BorderColor
+            PressedColor: =TextBox2_8.Color
+            PressedFill: =TextBox2_8.Fill
+            Size: =44
+            Text: =CountRows(Filter(Tickets,Status="Closed"))
+            Width: =168
+            X: =236.10526315789468
+            Y: =319.42857142857133
+            ZIndex: =23
+
+        TextBox2_3 As label:
+            Align: =Center
+            BorderColor: =RGBA(0, 0, 0, 1)
+            Color: =RGBA(71,185,50,1)
+            FocusedBorderColor: =TextBox2_3.BorderColor
+            FontWeight: =Normal
+            Height: =70
+            HoverBorderColor: =TextBox2_3.BorderColor
+            HoverColor: =TextBox2_3.Color
+            HoverFill: =TextBox2_3.Fill
+            OnSelect: |-
+                =Navigate(TicketsPage,ScreenTransition.Fade,{type:"Closed"})
+            PressedBorderColor: =TextBox2_3.BorderColor
+            PressedColor: =TextBox2_3.Color
+            PressedFill: =TextBox2_3.Fill
+            Size: =18
+            Text: ="Closed"
+            Width: =168
+            X: =236.10526315789468
+            Y: =373.7142857142853
+            ZIndex: =24
+
+    Group8 As group:
+        Height: =124.285714285714
+        Width: =167.96556205328204
+        X: =462.503573749187
+        Y: =319.428571428571
+        ZIndex: =4
+
+        TextBox2_9 As label:
+            Align: =Center
+            BorderColor: =RGBA(0, 0, 0, 1)
+            Color: =RGBA(227,48,12,1)
+            FocusedBorderColor: =TextBox2_9.BorderColor
+            FontWeight: =Lighter
+            Height: =80
+            HoverBorderColor: =TextBox2_9.BorderColor
+            HoverColor: =TextBox2_9.Color
+            HoverFill: =TextBox2_9.Fill
+            OnSelect: |-
+                =Navigate(TicketsPage,ScreenTransition.Fade,{type:"On Hold"})
+            PaddingRight: =10
+            PressedBorderColor: =TextBox2_9.BorderColor
+            PressedColor: =TextBox2_9.Color
+            PressedFill: =TextBox2_9.Fill
+            Size: =44
+            Text: =CountRows(Filter(Tickets,Status="On hold"))
+            Width: =167.96556205328233
+            X: =462.50357374918684
+            Y: =319.42857142857133
+            ZIndex: =25
+
+        TextBox2_4 As label:
+            Align: =Center
+            BorderColor: =RGBA(0, 0, 0, 1)
+            Color: =RGBA(227,48,12,1)
+            FocusedBorderColor: =TextBox2_4.BorderColor
+            FontWeight: =Normal
+            Height: =70
+            HoverBorderColor: =TextBox2_4.BorderColor
+            HoverColor: =TextBox2_4.Color
+            HoverFill: =TextBox2_4.Fill
+            OnSelect: |-
+                =Navigate(TicketsPage,ScreenTransition.Fade,{type:"On Hold"})
+            PaddingRight: =10
+            PressedBorderColor: =TextBox2_4.BorderColor
+            PressedColor: =TextBox2_4.Color
+            PressedFill: =TextBox2_4.Fill
+            Size: =18
+            Text: ="On hold"
+            Width: =167.96556205328233
+            X: =462.50357374918684
+            Y: =373.7142857142853
+            ZIndex: =26
+
+    Group9 As group:
+        Height: =132.857142857143
+        Width: =168
+        X: =394.894736842106
+        Y: =131.285714285714
+        ZIndex: =5
+
+        TextBox2_6 As label:
+            Align: =Center
+            BorderColor: =RGBA(0, 0, 0, 1)
+            Color: =RGBA(56, 86, 153, 1)
+            FocusedBorderColor: =TextBox2_6.BorderColor
+            FontWeight: =Lighter
+            Height: =80
+            HoverBorderColor: =TextBox2_6.BorderColor
+            HoverColor: =TextBox2_6.Color
+            HoverFill: =TextBox2_6.Fill
+            OnSelect: |-
+                =Navigate(TicketsPage,ScreenTransition.Fade,{type:"New"})
+            PressedBorderColor: =TextBox2_6.BorderColor
+            PressedColor: =TextBox2_6.Color
+            PressedFill: =TextBox2_6.Fill
+            Size: =64
+            Text: =CountRows(Filter(Tickets,Status="New"))
+            Width: =168
+            X: =394.8947368421059
+            Y: =131.28571428571433
+            ZIndex: =27
+
+        TextBox2_1 As label:
+            Align: =Center
+            BorderColor: =RGBA(0, 0, 0, 1)
+            Color: =RGBA(56, 86, 153, 1)
+            FocusedBorderColor: =TextBox2_1.BorderColor
+            FontWeight: =Normal
+            Height: =70
+            HoverBorderColor: =TextBox2_1.BorderColor
+            HoverColor: =TextBox2_1.Color
+            HoverFill: =TextBox2_1.Fill
+            OnSelect: |-
+                =Navigate(TicketsPage,ScreenTransition.Fade,{type:"New"})
+            PressedBorderColor: =TextBox2_1.BorderColor
+            PressedColor: =TextBox2_1.Color
+            PressedFill: =TextBox2_1.Fill
+            Size: =18
+            Text: =If(TextBox2_6.Text="1","New ticket","New tickets")
+            Width: =168
+            X: =394.8947368421059
+            Y: =194.14285714285734
+            ZIndex: =28
+
+    Group10 As group:
+        Height: =134.28571428571402
+        Width: =168
+        X: =75.7105263157895
+        Y: =130.190476190476
+        ZIndex: =6
+
+        TextBox2 As label:
+            Align: =Center
+            BorderColor: =RGBA(0, 0, 0, 1)
+            Color: =RGBA(0, 0, 0, 1)
+            FocusedBorderColor: =TextBox2.BorderColor
+            FontWeight: =Normal
+            Height: =70
+            HoverBorderColor: =TextBox2.BorderColor
+            HoverColor: =TextBox2.Color
+            HoverFill: =TextBox2.Fill
+            OnSelect: |-
+                =Navigate(TicketsPage,ScreenTransition.Fade,{type:"All"})
+            PressedBorderColor: =TextBox2.BorderColor
+            PressedColor: =TextBox2.Color
+            PressedFill: =TextBox2.Fill
+            Size: =18
+            Text: ="All tickets"
+            Width: =168
+            X: =75.71052631578951
+            Y: =194.47619047619034
+            ZIndex: =34
+
+        TextBox2_5 As label:
+            Align: =Center
+            BorderColor: =RGBA(0, 0, 0, 1)
+            Color: =RGBA(0, 0, 0, 1)
+            FocusedBorderColor: =TextBox2_5.BorderColor
+            FontWeight: =Lighter
+            Height: =80
+            HoverBorderColor: =TextBox2_5.BorderColor
+            HoverColor: =TextBox2_5.Color
+            HoverFill: =TextBox2_5.Fill
+            OnSelect: |-
+                =Navigate(TicketsPage,ScreenTransition.Fade,{type:"All"})
+            PressedBorderColor: =TextBox2_5.BorderColor
+            PressedColor: =TextBox2_5.Color
+            PressedFill: =TextBox2_5.Fill
+            Size: =64
+            Text: =CountRows(Tickets)
+            Width: =168
+            X: =75.71052631578951
+            Y: =130.19047619047592
+            ZIndex: =35
+
+    Rectangle2 As rectangle:
+        BorderColor: =RGBA(0, 0, 255, 1)
+        DisabledFill: =Rectangle2.Fill
+        Fill: =RGBA(255, 255, 255, 1)
+        FocusedBorderColor: =Rectangle2.BorderColor
+        Height: =380
+        HoverFill: =Rectangle2.Fill
+        PressedFill: =Rectangle2.Fill
+        TabIndex: =0
+        Width: =640
+        Y: =88
+        ZIndex: =10
+
+    Rectangle1 As rectangle:
+        BorderColor: =RGBA(0, 0, 255, 1)
+        DisabledFill: =Rectangle1.Fill
+        Fill: =RGBA(109, 49, 162, 1)
+        FocusedBorderColor: =Rectangle1.BorderColor
+        Height: =90
+        HoverFill: =Rectangle1.Fill
+        PressedFill: =Rectangle1.Fill
+        TabIndex: =0
+        Width: =640
+        ZIndex: =11
+
+    TextBox1 As label:
+        Align: =Align.Center
+        BorderColor: =RGBA(0, 0, 0, 1)
+        Color: =RGBA(255, 255, 255, 1)
+        FocusedBorderColor: =TextBox1.BorderColor
+        FontWeight: =Lighter
+        Height: =90
+        HoverBorderColor: =TextBox1.BorderColor
+        HoverColor: =TextBox1.Color
+        HoverFill: =TextBox1.Fill
+        PressedBorderColor: =TextBox1.BorderColor
+        PressedColor: =TextBox1.Color
+        PressedFill: =TextBox1.Fill
+        Size: =28
+        Text: ="Service desk"
+        Width: =464
+        X: =88
+        ZIndex: =14
+
+    Rectangle9 As rectangle:
+        BorderColor: =RGBA(0, 0, 255, 1)
+        DisabledFill: =Rectangle9.Fill
+        Fill: =RGBA(255, 255, 255, .2)
+        FocusedBorderColor: =Rectangle9.BorderColor
+        Height: =1
+        HoverFill: =Rectangle9.Fill
+        PressedFill: =Rectangle9.Fill
+        TabIndex: =0
+        Width: =640
+        Y: =289.85714285714266
+        ZIndex: =17
+
+    Rectangle10 As rectangle:
+        BorderColor: =RGBA(0, 0, 255, 1)
+        DisabledFill: =Rectangle10.Fill
+        Fill: =RGBA(255, 255, 255, .2)
+        FocusedBorderColor: =Rectangle10.BorderColor
+        Height: =199.42857142857144
+        HoverFill: =Rectangle10.Fill
+        PressedFill: =Rectangle10.Fill
+        TabIndex: =0
+        Width: =1
+        X: =319.5
+        Y: =90.57142857142857
+        ZIndex: =18
+
+    Rectangle10_4 As rectangle:
+        BorderColor: =RGBA(0, 0, 255, 1)
+        DisabledFill: =Rectangle10_4.Fill
+        Fill: =RGBA(255, 255, 255, .2)
+        FocusedBorderColor: =Rectangle10_4.BorderColor
+        Height: =177.960486322188
+        HoverFill: =Rectangle10_4.Fill
+        PressedFill: =Rectangle10_4.Fill
+        TabIndex: =0
+        Width: =1
+        X: =426
+        Y: =290.66666666666674
+        ZIndex: =19
+
+    Rectangle10_5 As rectangle:
+        BorderColor: =RGBA(0, 0, 255, 1)
+        DisabledFill: =Rectangle10_5.Fill
+        Fill: =RGBA(255, 255, 255, .2)
+        FocusedBorderColor: =Rectangle10_5.BorderColor
+        Height: =177.960486322188
+        HoverFill: =Rectangle10_5.Fill
+        PressedFill: =Rectangle10_5.Fill
+        TabIndex: =0
+        Width: =1
+        X: =213
+        Y: =291
+        ZIndex: =20
+
+    Button2 As button:
+        AutoDisableOnSelect: =false
+        BorderColor: =ColorFade(Button2.Fill, -15%)
+        BorderThickness: =0
+        DisabledBorderColor: =ColorFade(Button2.BorderColor, 70%)
+        Fill: =RGBA(0, 0, 0, 0)
+        FocusedBorderColor: =Button2.BorderColor
+        Height: =88
+        HoverBorderColor: =Button2.BorderColor
+        HoverColor: =Button2.Color
+        HoverFill: =ColorFade(Button2.Fill, 20%)
+        OnSelect: |-
+            =Navigate('New User Register', ScreenTransition.Fade);
+            NewForm(NewTicketForm)
+        PressedBorderColor: =Button2.BorderColor
+        PressedColor: =Button2.Color
+        PressedFill: =Button2.Fill
+        RadiusBottomLeft: =0
+        RadiusBottomRight: =0
+        RadiusTopLeft: =0
+        RadiusTopRight: =0
+        Size: =24
+        Text: =""
+        Width: =88
+        X: =552
+        ZIndex: =38
+
+    FilterGallery As gallery.textualGalleryVertical:
+        DisabledBorderColor: =FilterGallery.BorderColor
+        DisabledFill: =FilterGallery.Fill
+        Height: =667
+        HoverBorderColor: =FilterGallery.BorderColor
+        HoverFill: =FilterGallery.Fill
+        Items: =TicketTypes
+        Layout: =Layout.Vertical
+        LoadingSpinnerColor: =FilterGallery.BorderColor
+        PressedBorderColor: =FilterGallery.BorderColor
+        PressedFill: =FilterGallery.Fill
+        ShowScrollbar: =false
+        TemplatePadding: =0
+        TemplateSize: =99.18581418581459
+        Y: =469
+        ZIndex: =40
+
+        Group22 As group:
+            Height: =97.1858141858146
+            Width: =640
+            X: =0
+            Y: =2
+            ZIndex: =1
+
+            Heading2 As label:
+                FocusedBorderColor: =Heading2.BorderColor
+                FontWeight: =Semibold
+                Height: =97.18581418581462
+                HoverBorderColor: =Heading2.BorderColor
+                HoverColor: =Heading2.Color
+                HoverFill: =Heading2.Fill
+                OnSelect: |-
+                    =If(ThisItem.TicketTypes="All tickets",
+                        Navigate(TicketsPage,ScreenTransition.Fade,{type:"All"}),
+                        ThisItem.TicketTypes="New tickets",
+                            Navigate(TicketsPage,ScreenTransition.Fade,{type:"New"}),
+                        ThisItem.TicketTypes="Tickets in progress",
+                            Navigate(TicketsPage,ScreenTransition.Fade,{type:"In progress"}),
+                        ThisItem.TicketTypes="Tickets closed",
+                            Navigate(TicketsPage,ScreenTransition.Fade,{type:"Closed"}),
+                        ThisItem.TicketTypes="Tickets on hold",
+                            Navigate(TicketsPage,ScreenTransition.Fade,{type:"On hold"}),
+                        ThisItem.TicketTypes="Tickets older than 3 days",
+                            Navigate(TicketsPage,ScreenTransition.Fade,{datetype:Text(DateAdd(Today(), -3)),type:"Tickets older than 3 days"}),
+                        ThisItem.TicketTypes="Tickets closed today",
+                            Navigate(TicketsPage,ScreenTransition.Fade,{datetype:Text(Today()),type:"Tickets closed today"}),
+                        ThisItem.TicketTypes="Tickets opened today",
+                            Navigate(TicketsPage,ScreenTransition.Fade,{datetype:Text(Today()),type:"Tickets opened today"}))
+                PaddingBottom: =4
+                PaddingLeft: =30
+                PaddingTop: =4
+                PressedBorderColor: =Heading2.BorderColor
+                PressedColor: =Heading2.Color
+                PressedFill: =Heading2.Fill
+                Size: =22
+                Text: =ThisItem.TicketTypes
+                Width: =640
+                Wrap: =false
+                Y: =2
+                ZIndex: =2
+
+            icon11 As icon.ChevronRight:
+                BorderColor: =RGBA(0, 0, 0, 1)
+                Color: =RGBA(115, 115, 115, 1)
+                DisabledBorderColor: =RGBA(56, 56, 56, 1)
+                DisabledFill: =icon11.Fill
+                FocusedBorderColor: =icon11.BorderColor
+                Height: =40
+                HoverBorderColor: =ColorFade(icon11.BorderColor, 20%)
+                HoverColor: =ColorFade(icon11.Color, 20%)
+                HoverFill: =icon11.Fill
+                Icon: =Icon.ChevronRight
+                OnSelect: |-
+                    =If(ThisItem.TicketTypes="All tickets",
+                        Navigate(TicketsPage,ScreenTransition.Fade,{type:"All"}),
+                        ThisItem.TicketTypes="New tickets",
+                            Navigate(TicketsPage,ScreenTransition.Fade,{type:"New"}),
+                        ThisItem.TicketTypes="Tickets in progress",
+                            Navigate(TicketsPage,ScreenTransition.Fade,{type:"In progress"}),
+                        ThisItem.TicketTypes="Tickets closed",
+                            Navigate(TicketsPage,ScreenTransition.Fade,{type:"Closed"}),
+                        ThisItem.TicketTypes="Tickets on hold",
+                            Navigate(TicketsPage,ScreenTransition.Fade,{type:"On hold"}),
+                        ThisItem.TicketTypes="Tickets older than 3 days",
+                            Navigate(TicketsPage,ScreenTransition.Fade,{datetype:Text(DateAdd(Today(), -3)),type:"Tickets older than 3 days"}),
+                        ThisItem.TicketTypes="Tickets closed today",
+                            Navigate(TicketsPage,ScreenTransition.Fade,{datetype:Text(Today()),type:"Tickets closed today"}),
+                        ThisItem.TicketTypes="Tickets opened today",
+                            Navigate(TicketsPage,ScreenTransition.Fade,{datetype:Text(Today()),type:"Tickets opened today"}))
+                PressedBorderColor: =ColorFade(icon11.BorderColor, -20%)
+                PressedColor: =ColorFade(icon11.Color, -20%)
+                PressedFill: =icon11.Fill
+                TabIndex: =0
+                Width: =32
+                X: =585.896200185357
+                Y: =30.428428581432094
+                ZIndex: =3
+
+        Rectangle5 As rectangle:
+            BorderColor: =RGBA(0, 0, 255, 1)
+            BorderThickness: =2
+            DisabledFill: =Rectangle5.Fill
+            Fill: =RGBA(204, 204, 204, 1)
+            FocusedBorderColor: =Rectangle5.BorderColor
+            Height: =2
+            HoverFill: =Rectangle5.Fill
+            PressedFill: =Rectangle5.Fill
+            TabIndex: =0
+            Width: =640
+            ZIndex: =4
+
+    TextBox7 As label:
+        BorderColor: =RGBA(0, 0, 0, 1)
+        FocusedBorderColor: =TextBox7.BorderColor
+        Height: =70
+        HoverBorderColor: =TextBox7.BorderColor
+        HoverColor: =TextBox7.Color
+        HoverFill: =TextBox7.Fill
+        PressedBorderColor: =TextBox7.BorderColor
+        PressedColor: =TextBox7.Color
+        PressedFill: =TextBox7.Fill
+        Size: =21
+        Text: =Today()
+        Visible: =false
+        Width: =560
+        X: =60
+        Y: =60
+        ZIndex: =43
+
+    Timer1 As timer:
+        BorderColor: =RGBA(0, 0, 0, 1)
+        DisabledBorderColor: =RGBA(56, 56, 56, 1)
+        DisabledColor: =RGBA(186, 186, 186, 1)
+        DisabledFill: =RGBA(119, 119, 119, 1)
+        Duration: =100
+        FocusedBorderColor: =Timer1.BorderColor
+        HoverBorderColor: =ColorFade(Timer1.BorderColor, 20%)
+        HoverColor: =Timer1.Color
+        HoverFill: =ColorFade(Timer1.Fill, 20%)
+        OnTimerEnd: =Refresh(Tickets)
+        PaddingBottom: =0
+        PaddingLeft: =0
+        PaddingRight: =0
+        PaddingTop: =0
+        PressedBorderColor: =ColorFade(Timer1.BorderColor, -20%)
+        PressedColor: =Timer1.Color
+        PressedFill: =ColorFade(Timer1.Fill, -20%)
+        RadiusBottomLeft: =0
+        RadiusBottomRight: =0
+        RadiusTopLeft: =0
+        RadiusTopRight: =0
+        Size: =11
+        Start: =true
+        Text: |-
+            =Text(Time(0, 0, Timer1.Value/1000), "hh:mm:ss")
+        Visible: =false
+        Width: =150
+        X: =14
+        Y: =20
+        ZIndex: =44
+

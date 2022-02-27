@@ -1,0 +1,17 @@
+[
+  {
+    "ApiId": "/providers/microsoft.powerapps/apis/shared_excel",
+    "CdpRevision": {
+      "BaseUrl": "/",
+      "LastChangedTimeString": "2021-12-15T17:32:17.7730000Z",
+      "RevisionNumber": 1
+    },
+    "ConnectedDataSourceInfoNameMapping": {},
+    "DatasetName": "DD1FC7CB371062F8!122",
+    "EncodeDataset": true,
+    "IsSampleData": false,
+    "IsWritable": true,
+    "Name": "Filterby",
+    "Type": "ConnectedDataSourceInfo"
+  }
+]

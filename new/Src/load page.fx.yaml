@@ -1,0 +1,33 @@
+"'load page' As screen":
+    Fill: =RGBA(128, 128, 128, 1)
+    OnVisible: |-
+        =Collect(Collection1, {Image: Image1.Image})
+
+    Image1 As image:
+        Height: =577
+        Image: ='app sonic'
+        Width: =627
+        X: =6
+        Y: =234
+        ZIndex: =1
+
+    Button3 As button:
+        Height: =70
+        OnSelect: =Navigate('New User Register', ScreenTransition.Fade)
+        Size: =24
+        Text: ="New User"
+        Width: =280
+        X: =42
+        Y: =878
+        ZIndex: =2
+
+    Button4 As button:
+        Height: =70
+        OnSelect: =Navigate(HomePage, ScreenTransition.Fade)
+        Size: =24
+        Text: ="Existing User"
+        Width: =280
+        X: =322
+        Y: =878
+        ZIndex: =3
+

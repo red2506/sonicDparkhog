@@ -1,0 +1,1808 @@
+TicketDetailsPage As screen:
+    Fill: =RGBA(0, 0, 0, 0)
+    Height: =Max(App.Height, App.DesignHeight)
+    OnVisible: =false
+    Orientation: =If(TicketDetailsPage.Width < TicketDetailsPage.Height, Layout.Vertical, Layout.Horizontal)
+    Size: =1 + CountRows(App.SizeBreakpoints) - CountIf(App.SizeBreakpoints, Value >= TicketDetailsPage.Width)
+    Width: =Max(App.Width, App.DesignWidth)
+
+    Group3_2 As group:
+        Height: =88
+        Width: =88
+        X: =0
+        Y: =0
+        ZIndex: =1
+
+        Rectangle1_14 As rectangle:
+            BorderColor: =RGBA(0, 0, 255, 1)
+            DisabledFill: =Rectangle1_14.Fill
+            Fill: =RGBA(62,96,170,0)
+            FocusedBorderColor: =Rectangle1_14.BorderColor
+            Height: =88
+            HoverFill: =Rectangle1_14.Fill
+            OnSelect: |-
+                =ResetForm(TicketDetailsForm);
+                Navigate(TicketsPage, ScreenTransition.Fade)
+            PressedFill: =Rectangle1_14.Fill
+            TabIndex: =0
+            Width: =88
+            ZIndex: =8
+
+        icon6_2 As icon.ChevronLeft:
+            BorderColor: =RGBA(0, 0, 0, 1)
+            Color: =RGBA(255, 255, 255, 1)
+            DisabledBorderColor: =RGBA(56, 56, 56, 1)
+            DisabledFill: =icon6_2.Fill
+            FocusedBorderColor: =icon6_2.BorderColor
+            Height: =32
+            HoverBorderColor: =ColorFade(icon6_2.BorderColor, 20%)
+            HoverColor: =ColorFade(icon6_2.Color, 20%)
+            HoverFill: =icon6_2.Fill
+            Icon: =Icon.ChevronLeft
+            OnSelect: |-
+                =ResetForm(TicketDetailsForm);
+                Navigate(TicketsPage, ScreenTransition.Fade)
+            PressedBorderColor: =ColorFade(icon6_2.BorderColor, -20%)
+            PressedColor: =ColorFade(icon6_2.Color, -20%)
+            PressedFill: =icon6_2.Fill
+            TabIndex: =0
+            Width: =32
+            X: =28
+            Y: =28
+            ZIndex: =9
+
+    Rectangle2_2 As rectangle:
+        BorderColor: =RGBA(0, 0, 255, 1)
+        DisabledFill: =Rectangle2_2.Fill
+        Fill: =RGBA(233, 233, 233, 1)
+        FocusedBorderColor: =Rectangle2_2.BorderColor
+        Height: =1048
+        HoverFill: =Rectangle2_2.Fill
+        PressedFill: =Rectangle2_2.Fill
+        TabIndex: =0
+        Width: =640
+        Y: =88
+        ZIndex: =4
+
+    Rectangle1_13 As rectangle:
+        BorderColor: =RGBA(0, 0, 255, 1)
+        DisabledFill: =Rectangle1_13.Fill
+        Fill: =RGBA(109, 49, 162, 1)
+        FocusedBorderColor: =Rectangle1_13.BorderColor
+        Height: =88
+        HoverFill: =Rectangle1_13.Fill
+        PressedFill: =Rectangle1_13.Fill
+        TabIndex: =0
+        Width: =640
+        ZIndex: =5
+
+    Rectangle11 As rectangle:
+        BorderColor: =RGBA(0, 0, 255, 1)
+        DisabledFill: =Rectangle11.Fill
+        Fill: =RGBA(242, 244, 249, 1)
+        FocusedBorderColor: =Rectangle11.BorderColor
+        Height: =1048
+        HoverFill: =Rectangle11.Fill
+        PressedFill: =Rectangle11.Fill
+        TabIndex: =0
+        Width: =640
+        Y: =88
+        ZIndex: =6
+
+    TextBox1_5 As label:
+        Align: =Align.Center
+        BorderColor: =RGBA(0, 0, 0, 1)
+        Color: =RGBA(255, 255, 255, 1)
+        FocusedBorderColor: =TextBox1_5.BorderColor
+        FontWeight: =Lighter
+        Height: =88
+        HoverBorderColor: =TextBox1_5.BorderColor
+        HoverColor: =TextBox1_5.Color
+        HoverFill: =TextBox1_5.Fill
+        PressedBorderColor: =TextBox1_5.BorderColor
+        PressedColor: =TextBox1_5.Color
+        PressedFill: =TextBox1_5.Fill
+        Size: =28
+        Text: ="Ticket details"
+        Width: =464
+        X: =88
+        ZIndex: =7
+
+    Button1_1 As button:
+        AutoDisableOnSelect: =false
+        BorderColor: =ColorFade(Button1_1.Fill, -15%)
+        BorderThickness: =0
+        DisabledBorderColor: =ColorFade(Button1_1.BorderColor, 70%)
+        Fill: =RGBA(107,0,64,.8) 
+        FocusedBorderColor: =Button1_1.BorderColor
+        Height: =80
+        HoverBorderColor: =Button1_1.BorderColor
+        HoverColor: =Button1_1.Color
+        HoverFill: =Button1_1.Fill
+        OnSelect: =SubmitForm(TicketDetailsForm)
+        PressedBorderColor: =Button1_1.BorderColor
+        PressedColor: =Button1_1.Color
+        PressedFill: =ColorFade(Button1_1.Fill,20%)
+        RadiusBottomLeft: =0
+        RadiusBottomRight: =0
+        RadiusTopLeft: =0
+        RadiusTopRight: =0
+        Size: =24
+        Text: ="Save"
+        Width: =640
+        Y: =1056
+        ZIndex: =11
+
+    TextBox8 As label:
+        BorderColor: =RGBA(0, 0, 0, 1)
+        FocusedBorderColor: =TextBox8.BorderColor
+        Height: =70
+        HoverBorderColor: =TextBox8.BorderColor
+        HoverColor: =TextBox8.Color
+        HoverFill: =TextBox8.Fill
+        PressedBorderColor: =TextBox8.BorderColor
+        PressedColor: =TextBox8.Color
+        PressedFill: =TextBox8.Fill
+        Size: =21
+        Text: =Today()
+        Visible: =false
+        Width: =560
+        X: =40
+        Y: =40
+        ZIndex: =14
+
+    TextBox10 As label:
+        BorderColor: =RGBA(0, 0, 0, 1)
+        FocusedBorderColor: =TextBox10.BorderColor
+        Height: =70
+        HoverBorderColor: =TextBox10.BorderColor
+        HoverColor: =TextBox10.Color
+        HoverFill: =TextBox10.Fill
+        PressedBorderColor: =TextBox10.BorderColor
+        PressedColor: =TextBox10.Color
+        PressedFill: =TextBox10.Fill
+        Size: =21
+        Text: =Today()
+        Visible: =false
+        Width: =560
+        X: =28
+        Y: =148
+        ZIndex: =15
+
+    TicketDetailsForm As form:
+        BorderColor: =RGBA(180, 180, 180, 1)
+        DataSource: =Tickets
+        Height: =969.5376147198418
+        Item: =TicketsGallery.Selected
+        NumberOfColumns: =1
+        OnSuccess: =Navigate(TicketsPage,ScreenTransition.Fade)
+        Width: =640
+        Y: =86.22579463835689
+        ZIndex: =16
+
+        DataCard3 As typedDataCard.textualEditCard:
+            BorderColor: =RGBA(0, 0, 0, 1)
+            BorderStyle: =BorderStyle.Solid
+            DataField: ="ID"
+            Default: =ThisItem.ID
+            DisplayMode: =DisplayMode.Edit
+            DisplayName: ="Ticket ID"
+            Fill: =RGBA(0, 0, 0, 0)
+            Height: =100
+            Required: =false
+            Update: =Value4.Text
+            Width: =640
+            WidthFit: =false
+            X: =0.5
+            Y: =-7.228915662650593
+            ZIndex: =1
+
+            Key6 As label:
+                Color: =RGBA(47,41,43,1)
+                FocusedBorderColor: =Key6.BorderColor
+                FontWeight: =Lighter
+                Height: =50
+                HoverBorderColor: =Key6.BorderColor
+                HoverColor: =Key6.Color
+                HoverFill: =Key6.Fill
+                PaddingBottom: =0
+                PaddingLeft: =0
+                PaddingRight: =0
+                PaddingTop: =0
+                PressedBorderColor: =Key6.BorderColor
+                PressedColor: =Key6.Color
+                PressedFill: =Key6.Fill
+                Size: =21
+                Text: =Parent.DisplayName
+                VerticalAlign: =VerticalAlign.Top
+                Width: =192
+                Wrap: =false
+                X: =30
+                Y: =24.28571428571429
+                ZIndex: =1
+
+            Value4 As text:
+                BorderColor: =If(IsBlank(Parent.Error), Parent.BorderColor, Color.Red)
+                Default: =EditRecord.ID
+                DisabledBorderColor: =RGBA(159, 167, 165, 0)
+                DisabledColor: =RGBA(47, 41, 43, 1)
+                DisabledFill: =RGBA(159, 167, 165, 0)
+                DisplayMode: =If(true,DisplayMode.Disabled,DisplayMode.Edit)
+                FocusedBorderColor: =Value4.BorderColor
+                FocusedBorderThickness: =3
+                Height: =50
+                PaddingBottom: =0
+                PaddingLeft: =0
+                PaddingRight: =0
+                PaddingTop: =0
+                PressedBorderColor: =Value4.HoverBorderColor
+                PressedColor: =Value4.Color
+                PressedFill: =Value4.Fill
+                RadiusBottomLeft: =0
+                RadiusBottomRight: =0
+                RadiusTopLeft: =0
+                RadiusTopRight: =0
+                Size: =21
+                Width: =314
+                X: =296
+                Y: =18.571428571428566
+                ZIndex: =2
+
+            ErrorMessage11 As label:
+                AutoHeight: =true
+                FocusedBorderColor: =ErrorMessage11.BorderColor
+                Height: =24
+                HoverBorderColor: =ErrorMessage11.BorderColor
+                HoverColor: =ErrorMessage11.Color
+                HoverFill: =ErrorMessage11.Fill
+                PaddingBottom: =0
+                PaddingLeft: =0
+                PaddingRight: =0
+                PaddingTop: =0
+                PressedBorderColor: =ErrorMessage11.BorderColor
+                PressedColor: =ErrorMessage11.Color
+                PressedFill: =ErrorMessage11.Fill
+                Size: =12
+                Text: =Parent.Error
+                Width: =Parent.Width - 60
+                X: =30
+                Y: =Value4.Y + Value4.Height
+                ZIndex: =3
+
+            StarVisible11 As label:
+                Align: =Align.Center
+                FocusedBorderColor: =StarVisible11.BorderColor
+                Height: =Key6.Height
+                HoverBorderColor: =StarVisible11.BorderColor
+                HoverColor: =StarVisible11.Color
+                HoverFill: =StarVisible11.Fill
+                PaddingBottom: =Key6.PaddingBottom
+                PaddingLeft: =Key6.PaddingLeft
+                PaddingRight: =Key6.PaddingRight
+                PaddingTop: =Key6.PaddingTop
+                PressedBorderColor: =StarVisible11.BorderColor
+                PressedColor: =StarVisible11.Color
+                PressedFill: =StarVisible11.Fill
+                Size: =21
+                Text: ="*"
+                VerticalAlign: =VerticalAlign.Top
+                Visible: =false
+                Width: =30
+                Wrap: =false
+                Y: =Key6.Y
+                ZIndex: =4
+
+            Rectangle16 As rectangle:
+                BorderColor: =RGBA(0, 0, 255, 1)
+                DisabledFill: =Rectangle16.Fill
+                Fill: =RGBA(204, 204, 204, 1)
+                FocusedBorderColor: =Rectangle16.BorderColor
+                Height: =2
+                HoverFill: =Rectangle16.Fill
+                PressedFill: =Rectangle16.Fill
+                TabIndex: =0
+                Width: =640
+                Y: =90
+                ZIndex: =5
+
+        DataCard4 As typedDataCard.textualEditCard:
+            BorderColor: =RGBA(0, 0, 0, 1)
+            BorderStyle: =BorderStyle.Solid
+            DataField: ="Owner"
+            Default: =ThisItem.Owner
+            DisplayMode: =DisplayMode.Edit
+            DisplayName: ="Owner"
+            Fill: =RGBA(0, 0, 0, 0)
+            Height: =70.8235294117647
+            Required: =false
+            Update: =Value5.Text
+            Visible: =true
+            Width: =640
+            WidthFit: =false
+            X: =0.5
+            Y: =148.5
+            ZIndex: =2
+
+            Key8 As label:
+                Color: =RGBA(47,41,43,1)
+                FocusedBorderColor: =Key8.BorderColor
+                FontWeight: =Lighter
+                Height: =72
+                HoverBorderColor: =Key8.BorderColor
+                HoverColor: =Key8.Color
+                HoverFill: =Key8.Fill
+                PaddingBottom: =18
+                PaddingLeft: =0
+                PaddingRight: =0
+                PaddingTop: =24
+                PressedBorderColor: =Key8.BorderColor
+                PressedColor: =Key8.Color
+                PressedFill: =Key8.Fill
+                Size: =21
+                Text: ="Created by"
+                VerticalAlign: =VerticalAlign.Top
+                Width: =239
+                Wrap: =false
+                X: =30
+                ZIndex: =1
+
+            Value5 As text:
+                BorderColor: =If(IsBlank(Parent.Error), Parent.BorderColor, Color.Red)
+                Default: =EditRecord.Owner
+                DisabledBorderColor: =RGBA(159, 167, 165, 0)
+                DisabledColor: =RGBA(47, 41, 43, 1)
+                DisabledFill: =RGBA(159, 167, 165, 0)
+                DisplayMode: =If(true,DisplayMode.Disabled,DisplayMode.Edit)
+                Fill: =RGBA(255, 255, 255, 0)
+                FocusedBorderColor: =Value5.BorderColor
+                FocusedBorderThickness: =3
+                Height: =60
+                HoverFill: =RGBA(190, 202, 226, 0)
+                PaddingLeft: =0
+                PressedBorderColor: =Value5.HoverBorderColor
+                PressedColor: =Value5.Color
+                PressedFill: =Value5.Fill
+                RadiusBottomLeft: =0
+                RadiusBottomRight: =0
+                RadiusTopLeft: =0
+                RadiusTopRight: =0
+                Size: =21
+                Width: =314.70061728395063
+                X: =295.29938271604936
+                Y: =12.624999999999996
+                ZIndex: =2
+
+            ErrorMessage12 As label:
+                AutoHeight: =true
+                FocusedBorderColor: =ErrorMessage12.BorderColor
+                Height: =24
+                HoverBorderColor: =ErrorMessage12.BorderColor
+                HoverColor: =ErrorMessage12.Color
+                HoverFill: =ErrorMessage12.Fill
+                PaddingBottom: =0
+                PaddingLeft: =0
+                PaddingRight: =0
+                PaddingTop: =0
+                PressedBorderColor: =ErrorMessage12.BorderColor
+                PressedColor: =ErrorMessage12.Color
+                PressedFill: =ErrorMessage12.Fill
+                Size: =12
+                Text: =Parent.Error
+                Width: =Parent.Width - 60
+                X: =30
+                Y: =Value5.Y + Value5.Height
+                ZIndex: =3
+
+            StarVisible12 As label:
+                Align: =Align.Center
+                FocusedBorderColor: =StarVisible12.BorderColor
+                Height: =Key8.Height
+                HoverBorderColor: =StarVisible12.BorderColor
+                HoverColor: =StarVisible12.Color
+                HoverFill: =StarVisible12.Fill
+                PaddingBottom: =Key8.PaddingBottom
+                PaddingLeft: =Key8.PaddingLeft
+                PaddingRight: =Key8.PaddingRight
+                PaddingTop: =Key8.PaddingTop
+                PressedBorderColor: =StarVisible12.BorderColor
+                PressedColor: =StarVisible12.Color
+                PressedFill: =StarVisible12.Fill
+                Size: =21
+                Text: ="*"
+                VerticalAlign: =VerticalAlign.Top
+                Visible: =false
+                Width: =30
+                Wrap: =false
+                Y: =Key8.Y
+                ZIndex: =4
+
+            Rectangle16_1 As rectangle:
+                BorderColor: =RGBA(0, 0, 255, 1)
+                DisabledFill: =Rectangle16_1.Fill
+                Fill: =RGBA(204, 204, 204, 1)
+                FocusedBorderColor: =Rectangle16_1.BorderColor
+                Height: =2
+                HoverFill: =Rectangle16_1.Fill
+                PressedFill: =Rectangle16_1.Fill
+                TabIndex: =0
+                Width: =640
+                Y: =91.509433962264
+                ZIndex: =16
+
+        DataCard6 As typedDataCard.textualEditCard:
+            BorderColor: =RGBA(0, 0, 0, 1)
+            BorderStyle: =BorderStyle.Solid
+            DataField: ="AccountName"
+            Default: =ThisItem.AccountName
+            DisplayMode: =DisplayMode.Edit
+            DisplayName: ="Area"
+            Fill: =RGBA(0, 0, 0, 0)
+            Height: =101.2777717496138
+            Required: =false
+            Update: =Value6.Text
+            Width: =640
+            WidthFit: =false
+            X: =0.5
+            Y: =296
+            ZIndex: =3
+
+            Key10 As label:
+                Color: =RGBA(47,41,43,1)
+                FocusedBorderColor: =Key10.BorderColor
+                FontWeight: =Lighter
+                Height: =72
+                HoverBorderColor: =Key10.BorderColor
+                HoverColor: =Key10.Color
+                HoverFill: =Key10.Fill
+                PaddingBottom: =18
+                PaddingLeft: =0
+                PaddingRight: =0
+                PaddingTop: =24
+                PressedBorderColor: =Key10.BorderColor
+                PressedColor: =Key10.Color
+                PressedFill: =Key10.Fill
+                Size: =21
+                Text: =Parent.DisplayName
+                VerticalAlign: =VerticalAlign.Top
+                Width: =237
+                Wrap: =false
+                X: =30
+                Y: =8.024691358024691
+                ZIndex: =1
+
+            Value6 As text:
+                BorderColor: =If(IsBlank(Parent.Error), Parent.BorderColor, Color.Red)
+                Default: =area1
+                DisabledBorderColor: =RGBA(159, 167, 165, 0)
+                DisabledColor: =RGBA(47, 41, 43, 1)
+                DisabledFill: =RGBA(159, 167, 165, 0)
+                DisplayMode: =If(true,DisplayMode.Disabled,DisplayMode.Edit)
+                FocusedBorderColor: =Value6.BorderColor
+                FocusedBorderThickness: =3
+                Height: =52
+                OnSelect: |-
+                    =Navigate(AreaPage, ScreenTransition.Fade,{area1:Value6.Text})
+                PaddingLeft: =0
+                PressedBorderColor: =Value6.HoverBorderColor
+                PressedColor: =Value6.Color
+                PressedFill: =Value6.Fill
+                RadiusBottomLeft: =0
+                RadiusBottomRight: =0
+                RadiusTopLeft: =0
+                RadiusTopRight: =0
+                Size: =21
+                Width: =314.2345679012345
+                X: =295.7654320987655
+                Y: =25.08641975308643
+                ZIndex: =2
+
+            ErrorMessage13 As label:
+                AutoHeight: =true
+                FocusedBorderColor: =ErrorMessage13.BorderColor
+                Height: =24
+                HoverBorderColor: =ErrorMessage13.BorderColor
+                HoverColor: =ErrorMessage13.Color
+                HoverFill: =ErrorMessage13.Fill
+                PaddingBottom: =0
+                PaddingLeft: =0
+                PaddingRight: =0
+                PaddingTop: =0
+                PressedBorderColor: =ErrorMessage13.BorderColor
+                PressedColor: =ErrorMessage13.Color
+                PressedFill: =ErrorMessage13.Fill
+                Size: =12
+                Text: =Parent.Error
+                Width: =Parent.Width - 60
+                X: =30
+                Y: =Value6.Y + Value6.Height
+                ZIndex: =3
+
+            StarVisible13 As label:
+                Align: =Align.Center
+                FocusedBorderColor: =StarVisible13.BorderColor
+                Height: =Key10.Height
+                HoverBorderColor: =StarVisible13.BorderColor
+                HoverColor: =StarVisible13.Color
+                HoverFill: =StarVisible13.Fill
+                PaddingBottom: =Key10.PaddingBottom
+                PaddingLeft: =Key10.PaddingLeft
+                PaddingRight: =Key10.PaddingRight
+                PaddingTop: =Key10.PaddingTop
+                PressedBorderColor: =StarVisible13.BorderColor
+                PressedColor: =StarVisible13.Color
+                PressedFill: =StarVisible13.Fill
+                Size: =21
+                Text: ="*"
+                VerticalAlign: =VerticalAlign.Top
+                Visible: =false
+                Width: =30
+                Wrap: =false
+                Y: =Key10.Y
+                ZIndex: =4
+
+            Rectangle17 As rectangle:
+                BorderColor: =RGBA(0, 0, 255, 1)
+                DisabledFill: =Rectangle17.Fill
+                Fill: =RGBA(0, 0, 0, 0)
+                FocusedBorderColor: =Rectangle17.BorderColor
+                Height: =99
+                HoverFill: =Rectangle17.Fill
+                OnSelect: |-
+                    =Navigate(AreaPage, ScreenTransition.Fade,{area1:Value6.Text})
+                PressedFill: =Rectangle17.Fill
+                TabIndex: =0
+                Width: =610
+                X: =30
+                ZIndex: =5
+
+            Rectangle16_2 As rectangle:
+                BorderColor: =RGBA(0, 0, 255, 1)
+                DisabledFill: =Rectangle16_2.Fill
+                Fill: =RGBA(204, 204, 204, 1)
+                FocusedBorderColor: =Rectangle16_2.BorderColor
+                Height: =2
+                HoverFill: =Rectangle16_2.Fill
+                PressedFill: =Rectangle16_2.Fill
+                TabIndex: =0
+                Width: =640
+                Y: =99.28395061728419
+                ZIndex: =17
+
+            icon9 As icon.ChevronRight:
+                BorderColor: =RGBA(0, 0, 0, 1)
+                Color: =RGBA(115, 115, 115, 1)
+                DisabledBorderColor: =RGBA(56, 56, 56, 1)
+                DisabledFill: =icon9.Fill
+                FocusedBorderColor: =icon9.BorderColor
+                Height: =40
+                HoverBorderColor: =ColorFade(icon9.BorderColor, 20%)
+                HoverColor: =ColorFade(icon9.Color, 20%)
+                HoverFill: =icon9.Fill
+                Icon: =Icon.ChevronRight
+                OnSelect: |-
+                    =Navigate(AreaPage, ScreenTransition.Fade,{area1:Value6.Text})
+                PressedBorderColor: =ColorFade(icon9.BorderColor, -20%)
+                PressedColor: =ColorFade(icon9.Color, -20%)
+                PressedFill: =icon9.Fill
+                TabIndex: =0
+                Width: =32
+                X: =586.6419753086417
+                Y: =30
+                ZIndex: =21
+
+        DataCard7 As typedDataCard.textualEditCard:
+            BorderColor: =RGBA(0, 0, 0, 1)
+            BorderStyle: =BorderStyle.Solid
+            DataField: ="Priority"
+            Default: =ThisItem.Priority
+            DisplayMode: =DisplayMode.Edit
+            DisplayName: ="Priority"
+            Fill: =RGBA(0, 0, 0, 0)
+            Height: =82.35186993634278
+            Required: =false
+            Update: =Value8.Text
+            Width: =640
+            WidthFit: =false
+            X: =0.5
+            Y: =194
+            ZIndex: =4
+
+            Key12 As label:
+                Color: =RGBA(47,41,43,1)
+                FocusedBorderColor: =Key12.BorderColor
+                FontWeight: =Lighter
+                Height: =72
+                HoverBorderColor: =Key12.BorderColor
+                HoverColor: =Key12.Color
+                HoverFill: =Key12.Fill
+                PaddingBottom: =18
+                PaddingLeft: =0
+                PaddingRight: =0
+                PaddingTop: =24
+                PressedBorderColor: =Key12.BorderColor
+                PressedColor: =Key12.Color
+                PressedFill: =Key12.Fill
+                Size: =21
+                Text: =Parent.DisplayName
+                VerticalAlign: =VerticalAlign.Top
+                Width: =241.46913580246914
+                Wrap: =false
+                X: =27.53086419753086
+                Y: =8.641975308641974
+                ZIndex: =1
+
+            Value8 As text:
+                BorderColor: =If(IsBlank(Parent.Error), Parent.BorderColor, Color.Red)
+                Default: =priority
+                DisabledBorderColor: =RGBA(159, 167, 165, 0)
+                DisabledColor: =RGBA(47, 41, 43, 1)
+                DisabledFill: =RGBA(159, 167, 165, 0)
+                DisplayMode: =If(true,DisplayMode.Disabled,DisplayMode.Edit)
+                FocusedBorderColor: =Value8.BorderColor
+                FocusedBorderThickness: =3
+                Height: =52
+                OnSelect: |-
+                    =Navigate(PriorityPage, ScreenTransition.Fade,{priority:Value8.Text})
+                PaddingLeft: =0
+                PressedBorderColor: =Value8.HoverBorderColor
+                PressedColor: =Value8.Color
+                PressedFill: =Value8.Fill
+                RadiusBottomLeft: =0
+                RadiusBottomRight: =0
+                RadiusTopLeft: =0
+                RadiusTopRight: =0
+                Size: =21
+                Width: =314.61728395061726
+                X: =295.38271604938273
+                Y: =25.703703703703716
+                ZIndex: =2
+
+            ErrorMessage14 As label:
+                AutoHeight: =true
+                FocusedBorderColor: =ErrorMessage14.BorderColor
+                Height: =24
+                HoverBorderColor: =ErrorMessage14.BorderColor
+                HoverColor: =ErrorMessage14.Color
+                HoverFill: =ErrorMessage14.Fill
+                PaddingBottom: =0
+                PaddingLeft: =0
+                PaddingRight: =0
+                PaddingTop: =0
+                PressedBorderColor: =ErrorMessage14.BorderColor
+                PressedColor: =ErrorMessage14.Color
+                PressedFill: =ErrorMessage14.Fill
+                Size: =12
+                Text: =Parent.Error
+                Width: =Parent.Width - 60
+                X: =30
+                Y: =Value8.Y + Value8.Height
+                ZIndex: =3
+
+            StarVisible14 As label:
+                Align: =Align.Center
+                FocusedBorderColor: =StarVisible14.BorderColor
+                Height: =Key12.Height
+                HoverBorderColor: =StarVisible14.BorderColor
+                HoverColor: =StarVisible14.Color
+                HoverFill: =StarVisible14.Fill
+                PaddingBottom: =Key12.PaddingBottom
+                PaddingLeft: =Key12.PaddingLeft
+                PaddingRight: =Key12.PaddingRight
+                PaddingTop: =Key12.PaddingTop
+                PressedBorderColor: =StarVisible14.BorderColor
+                PressedColor: =StarVisible14.Color
+                PressedFill: =StarVisible14.Fill
+                Size: =21
+                Text: ="*"
+                VerticalAlign: =VerticalAlign.Top
+                Visible: =false
+                Width: =30
+                Wrap: =false
+                Y: =Key12.Y
+                ZIndex: =4
+
+            Rectangle18 As rectangle:
+                BorderColor: =RGBA(0, 0, 255, 1)
+                DisabledFill: =Rectangle18.Fill
+                Fill: =RGBA(0, 0, 0, 0)
+                FocusedBorderColor: =Rectangle18.BorderColor
+                Height: =99.92592592592598
+                HoverFill: =Rectangle18.Fill
+                OnSelect: |-
+                    =Navigate(PriorityPage, ScreenTransition.Fade,{priority:Value8.Text})
+                PressedFill: =Rectangle18.Fill
+                TabIndex: =0
+                Width: =610
+                X: =30
+                ZIndex: =5
+
+            Rectangle16_3 As rectangle:
+                BorderColor: =RGBA(0, 0, 255, 1)
+                DisabledFill: =Rectangle16_3.Fill
+                Fill: =RGBA(204, 204, 204, 1)
+                FocusedBorderColor: =Rectangle16_3.BorderColor
+                Height: =2
+                HoverFill: =Rectangle16_3.Fill
+                PressedFill: =Rectangle16_3.Fill
+                TabIndex: =0
+                Width: =640
+                Y: =99.777777777778
+                ZIndex: =18
+
+            icon9_1 As icon.ChevronRight:
+                BorderColor: =RGBA(0, 0, 0, 1)
+                Color: =RGBA(115, 115, 115, 1)
+                DisabledBorderColor: =RGBA(56, 56, 56, 1)
+                DisabledFill: =icon9_1.Fill
+                FocusedBorderColor: =icon9_1.BorderColor
+                Height: =40
+                HoverBorderColor: =ColorFade(icon9_1.BorderColor, 20%)
+                HoverColor: =ColorFade(icon9_1.Color, 20%)
+                HoverFill: =icon9_1.Fill
+                Icon: =Icon.ChevronRight
+                OnSelect: |-
+                    =Navigate(PriorityPage, ScreenTransition.Fade,{priority:Value8.Text})
+                PressedBorderColor: =ColorFade(icon9_1.BorderColor, -20%)
+                PressedColor: =ColorFade(icon9_1.Color, -20%)
+                PressedFill: =icon9_1.Fill
+                TabIndex: =0
+                Width: =32
+                X: =586.6419753086417
+                Y: =30.765432098765433
+                ZIndex: =22
+
+        DataCard9 As typedDataCard.textualEditCard:
+            BorderColor: =RGBA(0, 0, 0, 1)
+            BorderStyle: =BorderStyle.Solid
+            DataField: ="DateCreated"
+            Default: =ThisItem.DateCreated
+            DisplayMode: =DisplayMode.Edit
+            DisplayName: ="Created Date"
+            Fill: =RGBA(0, 0, 0, 0)
+            Height: =80
+            Required: =false
+            Update: =Value10.Text
+            Width: =640
+            WidthFit: =false
+            X: =0.5
+            Y: =610.5
+            ZIndex: =5
+
+            Key13 As label:
+                Color: =RGBA(47,41,43,1)
+                FocusedBorderColor: =Key13.BorderColor
+                FontWeight: =Lighter
+                Height: =72
+                HoverBorderColor: =Key13.BorderColor
+                HoverColor: =Key13.Color
+                HoverFill: =Key13.Fill
+                PaddingBottom: =18
+                PaddingLeft: =0
+                PaddingRight: =0
+                PaddingTop: =24
+                PressedBorderColor: =Key13.BorderColor
+                PressedColor: =Key13.Color
+                PressedFill: =Key13.Fill
+                Size: =21
+                Text: ="Created date"
+                VerticalAlign: =VerticalAlign.Top
+                Width: =239
+                Wrap: =false
+                X: =28.823529411764706
+                Y: =7.407407407407407
+                ZIndex: =1
+
+            Value10 As text:
+                BorderColor: =If(IsBlank(Parent.Error), Parent.BorderColor, Color.Red)
+                Default: =EditRecord.DateCreated
+                DisabledBorderColor: =RGBA(159, 167, 165, 0)
+                DisabledColor: =RGBA(47, 41, 43, 1)
+                DisabledFill: =RGBA(159, 167, 165, 0)
+                DisplayMode: =If(true,DisplayMode.Disabled,DisplayMode.Edit)
+                FocusedBorderColor: =Value10.BorderColor
+                FocusedBorderThickness: =3
+                Height: =52
+                PaddingLeft: =0
+                PressedBorderColor: =Value10.HoverBorderColor
+                PressedColor: =Value10.Color
+                PressedFill: =Value10.Fill
+                RadiusBottomLeft: =0
+                RadiusBottomRight: =0
+                RadiusTopLeft: =0
+                RadiusTopRight: =0
+                Size: =21
+                Width: =313.61728395061726
+                X: =296.38271604938273
+                Y: =24.469135802469146
+                ZIndex: =2
+
+            ErrorMessage15 As label:
+                AutoHeight: =true
+                FocusedBorderColor: =ErrorMessage15.BorderColor
+                Height: =24
+                HoverBorderColor: =ErrorMessage15.BorderColor
+                HoverColor: =ErrorMessage15.Color
+                HoverFill: =ErrorMessage15.Fill
+                PaddingBottom: =0
+                PaddingLeft: =0
+                PaddingRight: =0
+                PaddingTop: =0
+                PressedBorderColor: =ErrorMessage15.BorderColor
+                PressedColor: =ErrorMessage15.Color
+                PressedFill: =ErrorMessage15.Fill
+                Size: =12
+                Text: =Parent.Error
+                Width: =Parent.Width - 60
+                X: =30
+                Y: =Value10.Y + Value10.Height
+                ZIndex: =3
+
+            StarVisible15 As label:
+                Align: =Align.Center
+                FocusedBorderColor: =StarVisible15.BorderColor
+                Height: =Key13.Height
+                HoverBorderColor: =StarVisible15.BorderColor
+                HoverColor: =StarVisible15.Color
+                HoverFill: =StarVisible15.Fill
+                PaddingBottom: =Key13.PaddingBottom
+                PaddingLeft: =Key13.PaddingLeft
+                PaddingRight: =Key13.PaddingRight
+                PaddingTop: =Key13.PaddingTop
+                PressedBorderColor: =StarVisible15.BorderColor
+                PressedColor: =StarVisible15.Color
+                PressedFill: =StarVisible15.Fill
+                Size: =21
+                Text: ="*"
+                VerticalAlign: =VerticalAlign.Top
+                Visible: =false
+                Width: =30
+                Wrap: =false
+                Y: =Key13.Y
+                ZIndex: =4
+
+            Rectangle16_4 As rectangle:
+                BorderColor: =RGBA(0, 0, 255, 1)
+                DisabledFill: =Rectangle16_4.Fill
+                Fill: =RGBA(204, 204, 204, 1)
+                FocusedBorderColor: =Rectangle16_4.BorderColor
+                Height: =2
+                HoverFill: =Rectangle16_4.Fill
+                PressedFill: =Rectangle16_4.Fill
+                TabIndex: =0
+                Width: =640
+                Y: =98.85185185185183
+                ZIndex: =19
+
+        DataCard11 As typedDataCard.textualEditCard:
+            BorderColor: =RGBA(0, 0, 0, 1)
+            BorderStyle: =BorderStyle.Solid
+            DataField: ="DateClosed"
+            Default: =ThisItem.DateClosed
+            DisplayMode: =DisplayMode.Edit
+            DisplayName: ="Closed Date"
+            Fill: =RGBA(0, 0, 0, 0)
+            Height: =80
+            Required: =false
+            Update: =Value12.Text
+            Width: =640
+            WidthFit: =false
+            X: =0.5
+            Y: =758.5
+            ZIndex: =6
+
+            Key14 As label:
+                Color: =RGBA(47,41,43,1)
+                FocusedBorderColor: =Key14.BorderColor
+                FontWeight: =Lighter
+                Height: =72
+                HoverBorderColor: =Key14.BorderColor
+                HoverColor: =Key14.Color
+                HoverFill: =Key14.Fill
+                PaddingBottom: =18
+                PaddingLeft: =0
+                PaddingRight: =0
+                PaddingTop: =24
+                PressedBorderColor: =Key14.BorderColor
+                PressedColor: =Key14.Color
+                PressedFill: =Key14.Fill
+                Size: =21
+                Text: ="Closed date"
+                VerticalAlign: =VerticalAlign.Top
+                Width: =240.23456790123458
+                Wrap: =false
+                X: =28.76543209876543
+                Y: =7.407407407407407
+                ZIndex: =1
+
+            Value12 As text:
+                BorderColor: =If(IsBlank(Parent.Error), Parent.BorderColor, Color.Red)
+                Default: =If(IsBlank(EditRecord.DateClosed),"--",EditRecord.DateClosed)
+                DisabledBorderColor: =RGBA(159, 167, 165, 0)
+                DisabledColor: =RGBA(47, 41, 43, 1)
+                DisabledFill: =RGBA(159, 167, 165, 0)
+                DisplayMode: =If(true,DisplayMode.Disabled,DisplayMode.Edit)
+                FocusedBorderColor: =Value12.BorderColor
+                FocusedBorderThickness: =3
+                Height: =52
+                PaddingLeft: =0
+                PressedBorderColor: =Value12.HoverBorderColor
+                PressedColor: =Value12.Color
+                PressedFill: =Value12.Fill
+                RadiusBottomLeft: =0
+                RadiusBottomRight: =0
+                RadiusTopLeft: =0
+                RadiusTopRight: =0
+                Size: =21
+                Width: =313
+                X: =297
+                Y: =24.35802469135801
+                ZIndex: =2
+
+            ErrorMessage16 As label:
+                AutoHeight: =true
+                FocusedBorderColor: =ErrorMessage16.BorderColor
+                Height: =24
+                HoverBorderColor: =ErrorMessage16.BorderColor
+                HoverColor: =ErrorMessage16.Color
+                HoverFill: =ErrorMessage16.Fill
+                PaddingBottom: =0
+                PaddingLeft: =0
+                PaddingRight: =0
+                PaddingTop: =0
+                PressedBorderColor: =ErrorMessage16.BorderColor
+                PressedColor: =ErrorMessage16.Color
+                PressedFill: =ErrorMessage16.Fill
+                Size: =12
+                Text: =Parent.Error
+                Width: =Parent.Width - 60
+                X: =30
+                Y: =Value12.Y + Value12.Height
+                ZIndex: =3
+
+            StarVisible16 As label:
+                Align: =Align.Center
+                FocusedBorderColor: =StarVisible16.BorderColor
+                Height: =Key14.Height
+                HoverBorderColor: =StarVisible16.BorderColor
+                HoverColor: =StarVisible16.Color
+                HoverFill: =StarVisible16.Fill
+                PaddingBottom: =Key14.PaddingBottom
+                PaddingLeft: =Key14.PaddingLeft
+                PaddingRight: =Key14.PaddingRight
+                PaddingTop: =Key14.PaddingTop
+                PressedBorderColor: =StarVisible16.BorderColor
+                PressedColor: =StarVisible16.Color
+                PressedFill: =StarVisible16.Fill
+                Size: =21
+                Text: ="*"
+                VerticalAlign: =VerticalAlign.Top
+                Visible: =false
+                Width: =30
+                Wrap: =false
+                Y: =Key14.Y
+                ZIndex: =4
+
+            Rectangle16_5 As rectangle:
+                BorderColor: =RGBA(0, 0, 255, 1)
+                DisabledFill: =Rectangle16_5.Fill
+                Fill: =RGBA(204, 204, 204, 1)
+                FocusedBorderColor: =Rectangle16_5.BorderColor
+                Height: =2
+                HoverFill: =Rectangle16_5.Fill
+                PressedFill: =Rectangle16_5.Fill
+                TabIndex: =0
+                Width: =640
+                Y: =99.16049382716072
+                ZIndex: =20
+
+        DataCard13 As typedDataCard.textualEditCard:
+            BorderColor: =RGBA(0, 0, 0, 1)
+            BorderStyle: =BorderStyle.Solid
+            DataField: ="Subject"
+            Default: =ThisItem.Subject
+            DisplayMode: =DisplayMode.Edit
+            DisplayName: ="Subject"
+            Fill: =RGBA(0, 0, 0, 0)
+            Height: =158.49154611361223
+            Required: =false
+            Update: =Value13.Text
+            Width: =640
+            WidthFit: =false
+            X: =0.5
+            Y: =906.5
+            ZIndex: =7
+
+            Key16 As label:
+                Color: =RGBA(47,41,43,1)
+                FocusedBorderColor: =Key16.BorderColor
+                FontWeight: =Lighter
+                Height: =72
+                HoverBorderColor: =Key16.BorderColor
+                HoverColor: =Key16.Color
+                HoverFill: =Key16.Fill
+                PaddingBottom: =18
+                PaddingLeft: =0
+                PaddingRight: =0
+                PaddingTop: =24
+                PressedBorderColor: =Key16.BorderColor
+                PressedColor: =Key16.Color
+                PressedFill: =Key16.Fill
+                Size: =21
+                Text: =Parent.DisplayName
+                VerticalAlign: =VerticalAlign.Top
+                Width: =Parent.Width - 60
+                Wrap: =false
+                X: =28.823529411764706
+                Y: =5
+                ZIndex: =1
+
+            Value13 As text:
+                BorderColor: =If(IsBlank(Parent.Error), RGBA(204,204,204,1), Color.Red)
+                Default: =EditRecord.Subject
+                DisabledBorderColor: =RGBA(204,204,204,1)
+                DisabledColor: =RGBA(47, 41, 43, 1)
+                DisabledFill: =RGBA(159, 167, 165, 0)
+                DisplayMode: =If(disabledsubject,DisplayMode.Disabled,DisplayMode.Edit)
+                Fill: =RGBA(255, 255, 255, 0)
+                FocusedBorderColor: =Value13.BorderColor
+                FocusedBorderThickness: =3
+                Height: =52
+                HoverBorderColor: =Value13.BorderColor
+                HoverFill: =RGBA(190, 202, 226, 0)
+                PaddingLeft: =10
+                PressedBorderColor: =Value13.HoverBorderColor
+                PressedColor: =Value13.Color
+                PressedFill: =Value13.Fill
+                RadiusBottomLeft: =0
+                RadiusBottomRight: =0
+                RadiusTopLeft: =0
+                RadiusTopRight: =0
+                Size: =21
+                Width: =Parent.Width - 60
+                X: =30
+                Y: =79.40740740740742
+                ZIndex: =2
+
+            ErrorMessage17 As label:
+                AutoHeight: =true
+                FocusedBorderColor: =ErrorMessage17.BorderColor
+                Height: =24
+                HoverBorderColor: =ErrorMessage17.BorderColor
+                HoverColor: =ErrorMessage17.Color
+                HoverFill: =ErrorMessage17.Fill
+                PaddingBottom: =0
+                PaddingLeft: =0
+                PaddingRight: =0
+                PaddingTop: =0
+                PressedBorderColor: =ErrorMessage17.BorderColor
+                PressedColor: =ErrorMessage17.Color
+                PressedFill: =ErrorMessage17.Fill
+                Size: =12
+                Text: =Parent.Error
+                Width: =Parent.Width - 60
+                X: =30
+                Y: =Value13.Y + Value13.Height
+                ZIndex: =3
+
+            StarVisible17 As label:
+                Align: =Align.Center
+                FocusedBorderColor: =StarVisible17.BorderColor
+                Height: =Key16.Height
+                HoverBorderColor: =StarVisible17.BorderColor
+                HoverColor: =StarVisible17.Color
+                HoverFill: =StarVisible17.Fill
+                PaddingBottom: =Key16.PaddingBottom
+                PaddingLeft: =Key16.PaddingLeft
+                PaddingRight: =Key16.PaddingRight
+                PaddingTop: =Key16.PaddingTop
+                PressedBorderColor: =StarVisible17.BorderColor
+                PressedColor: =StarVisible17.Color
+                PressedFill: =StarVisible17.Fill
+                Size: =21
+                Text: ="*"
+                VerticalAlign: =VerticalAlign.Top
+                Visible: =false
+                Width: =30
+                Wrap: =false
+                Y: =Key16.Y
+                ZIndex: =4
+
+            Rectangle20 As rectangle:
+                BorderColor: =RGBA(0, 0, 255, 1)
+                DisabledFill: =Rectangle20.Fill
+                Fill: =RGBA(0, 0, 0, 0)
+                FocusedBorderColor: =Rectangle20.BorderColor
+                Height: =51.59259259259258
+                HoverFill: =Rectangle20.Fill
+                OnSelect: |-
+                    =UpdateContext({subjv:false,disabledsubject:false})
+                PressedFill: =Rectangle20.Fill
+                TabIndex: =0
+                Visible: =subjv
+                Width: =579
+                X: =30
+                Y: =79.40740740740742
+                ZIndex: =5
+
+        DataCard17 As typedDataCard.textualMultiLineEditCard:
+            BorderColor: =RGBA(0, 0, 0, 1)
+            BorderStyle: =BorderStyle.Solid
+            DataField: ="Description"
+            Default: =ThisItem.Description
+            DisplayMode: =DisplayMode.Edit
+            DisplayName: ="Description"
+            Fill: =RGBA(0, 0, 0, 0)
+            Height: =180
+            Required: =false
+            Update: =Value16.Text
+            Width: =640
+            WidthFit: =false
+            X: =0.5
+            Y: =956.5
+            ZIndex: =8
+
+            Key18 As label:
+                Color: =RGBA(47,41,43,1)
+                FocusedBorderColor: =Key18.BorderColor
+                FontWeight: =Lighter
+                Height: =44
+                HoverBorderColor: =Key18.BorderColor
+                HoverColor: =Key18.Color
+                HoverFill: =Key18.Fill
+                PaddingBottom: =0
+                PaddingLeft: =0
+                PaddingRight: =0
+                PaddingTop: =0
+                PressedBorderColor: =Key18.BorderColor
+                PressedColor: =Key18.Color
+                PressedFill: =Key18.Fill
+                Size: =21
+                Text: =Parent.DisplayName
+                VerticalAlign: =VerticalAlign.Top
+                Width: =Parent.Width - 60
+                Wrap: =false
+                X: =27.58896151053014
+                Y: =2.469135802469135
+                ZIndex: =1
+
+            Value16 As text:
+                BorderColor: =If(IsBlank(Parent.Error),  RGBA(204,204,204,1), Color.Red)
+                Default: =EditRecord.Description
+                DisabledBorderColor: =RGBA(204,204,204,1)
+                DisabledColor: =RGBA(47, 41, 43, 1)
+                DisabledFill: =RGBA(159, 167, 165, 0)
+                DisplayMode: =If(disableddesc,DisplayMode.Disabled,DisplayMode.Edit)
+                Fill: =RGBA(255, 255, 255, 0)
+                FocusedBorderColor: =Value16.BorderColor
+                FocusedBorderThickness: =3
+                Height: =156
+                HoverBorderColor: =RGBA(204,204,204,1)
+                HoverFill: =RGBA(190, 202, 226, 0)
+                Mode: =TextMode.MultiLine
+                PaddingLeft: =10
+                PressedBorderColor: =Value16.HoverBorderColor
+                PressedColor: =Value16.Color
+                PressedFill: =Value16.Fill
+                RadiusBottomLeft: =0
+                RadiusBottomRight: =0
+                RadiusTopLeft: =0
+                RadiusTopRight: =0
+                Size: =21
+                Width: =Parent.Width - 60
+                X: =30
+                Y: =56.871311989956055
+                ZIndex: =2
+
+            ErrorMessage19 As label:
+                AutoHeight: =true
+                FocusedBorderColor: =ErrorMessage19.BorderColor
+                Height: =24
+                HoverBorderColor: =ErrorMessage19.BorderColor
+                HoverColor: =ErrorMessage19.Color
+                HoverFill: =ErrorMessage19.Fill
+                PaddingBottom: =0
+                PaddingLeft: =0
+                PaddingRight: =0
+                PaddingTop: =0
+                PressedBorderColor: =ErrorMessage19.BorderColor
+                PressedColor: =ErrorMessage19.Color
+                PressedFill: =ErrorMessage19.Fill
+                Size: =12
+                Text: =Parent.Error
+                Width: =Parent.Width - 60
+                X: =30
+                Y: =Value16.Y + Value16.Height
+                ZIndex: =3
+
+            StarVisible19 As label:
+                Align: =Align.Center
+                FocusedBorderColor: =StarVisible19.BorderColor
+                Height: =Key18.Height
+                HoverBorderColor: =StarVisible19.BorderColor
+                HoverColor: =StarVisible19.Color
+                HoverFill: =StarVisible19.Fill
+                PaddingBottom: =Key18.PaddingBottom
+                PaddingLeft: =Key18.PaddingLeft
+                PaddingRight: =Key18.PaddingRight
+                PaddingTop: =Key18.PaddingTop
+                PressedBorderColor: =StarVisible19.BorderColor
+                PressedColor: =StarVisible19.Color
+                PressedFill: =StarVisible19.Fill
+                Size: =21
+                Text: ="*"
+                VerticalAlign: =VerticalAlign.Top
+                Visible: =false
+                Width: =30
+                Wrap: =false
+                Y: =Key18.Y
+                ZIndex: =4
+
+            Rectangle21 As rectangle:
+                BorderColor: =RGBA(0, 0, 255, 1)
+                DisabledFill: =Rectangle21.Fill
+                Fill: =RGBA(0, 0, 0, 0)
+                FocusedBorderColor: =Rectangle21.BorderColor
+                Height: =154.58024691358025
+                HoverFill: =Rectangle21.Fill
+                OnSelect: |-
+                    =UpdateContext({descv:false,disableddesc:false})
+                PressedFill: =Rectangle21.Fill
+                TabIndex: =0
+                Visible: =descv
+                Width: =579
+                X: =30
+                Y: =58.41975308641973
+                ZIndex: =5
+
+        DataCard18 As typedDataCard.textualEditCard:
+            BorderColor: =RGBA(0, 0, 0, 1)
+            BorderStyle: =BorderStyle.Solid
+            DataField: ="Status"
+            Default: =ThisItem.Status
+            DisplayMode: =DisplayMode.Edit
+            DisplayName: ="Status"
+            Fill: =RGBA(0, 0, 0, 0)
+            Height: =132.41360285252722
+            Required: =false
+            Update: =Value17.Text
+            Width: =640
+            WidthFit: =false
+            X: =333.18519121334873
+            Y: =1194.5
+            ZIndex: =9
+
+            Key19 As label:
+                Color: =RGBA(47,41,43,1)
+                FocusedBorderColor: =Key19.BorderColor
+                FontWeight: =Lighter
+                Height: =56
+                HoverBorderColor: =Key19.BorderColor
+                HoverColor: =Key19.Color
+                HoverFill: =Key19.Fill
+                PaddingBottom: =0
+                PaddingLeft: =0
+                PaddingRight: =0
+                PaddingTop: =0
+                PressedBorderColor: =Key19.BorderColor
+                PressedColor: =Key19.Color
+                PressedFill: =Key19.Fill
+                Size: =21
+                Text: ="Ticket status"
+                VerticalAlign: =VerticalAlign.Top
+                Width: =238
+                Wrap: =false
+                X: =30
+                Y: =59.87654320987659
+                ZIndex: =1
+
+            Value17 As text:
+                BorderColor: =If(IsBlank(Parent.Error), Parent.BorderColor, Color.Red)
+                Default: =type
+                DisabledBorderColor: = RGBA(159, 167, 165, 0)
+                DisabledColor: =(RGBA(47, 41, 43, 1))
+                DisabledFill: =RGBA(159, 167, 165, 0)
+                DisplayMode: =If(true,DisplayMode.Disabled,DisplayMode.Edit)
+                FocusedBorderColor: =Value17.BorderColor
+                FocusedBorderThickness: =3
+                Height: =52
+                HoverBorderColor: = RGBA(159, 167, 165, 0)
+                HoverFill: =RGBA(190, 202, 226, 0)
+                OnSelect: |-
+                    =Navigate(StatusPage, ScreenTransition.Fade,{type:Value17.Text})
+                PaddingLeft: =0
+                PressedBorderColor: =Value17.HoverBorderColor
+                PressedColor: =Value17.Color
+                PressedFill: =Value17.Fill
+                RadiusBottomLeft: =0
+                RadiusBottomRight: =0
+                RadiusTopLeft: =0
+                RadiusTopRight: =0
+                Size: =21
+                Width: =313.2345679012346
+                X: =296.7654320987654
+                Y: =52.91358024691362
+                ZIndex: =2
+
+            ErrorMessage20 As label:
+                AutoHeight: =true
+                FocusedBorderColor: =ErrorMessage20.BorderColor
+                Height: =24
+                HoverBorderColor: =ErrorMessage20.BorderColor
+                HoverColor: =ErrorMessage20.Color
+                HoverFill: =ErrorMessage20.Fill
+                PaddingBottom: =0
+                PaddingLeft: =0
+                PaddingRight: =0
+                PaddingTop: =0
+                PressedBorderColor: =ErrorMessage20.BorderColor
+                PressedColor: =ErrorMessage20.Color
+                PressedFill: =ErrorMessage20.Fill
+                Size: =12
+                Text: =Parent.Error
+                Width: =Parent.Width - 60
+                X: =30
+                Y: =Value17.Y + Value17.Height
+                ZIndex: =3
+
+            StarVisible20 As label:
+                Align: =Align.Center
+                FocusedBorderColor: =StarVisible20.BorderColor
+                Height: =Key19.Height
+                HoverBorderColor: =StarVisible20.BorderColor
+                HoverColor: =StarVisible20.Color
+                HoverFill: =StarVisible20.Fill
+                PaddingBottom: =Key19.PaddingBottom
+                PaddingLeft: =Key19.PaddingLeft
+                PaddingRight: =Key19.PaddingRight
+                PaddingTop: =Key19.PaddingTop
+                PressedBorderColor: =StarVisible20.BorderColor
+                PressedColor: =StarVisible20.Color
+                PressedFill: =StarVisible20.Fill
+                Size: =21
+                Text: ="*"
+                VerticalAlign: =VerticalAlign.Top
+                Visible: =false
+                Width: =30
+                Wrap: =false
+                Y: =Key19.Y
+                ZIndex: =4
+
+            Rectangle19 As rectangle:
+                BorderColor: =RGBA(0, 0, 255, 1)
+                DisabledFill: =Rectangle19.Fill
+                Fill: =RGBA(0, 0, 0, 0)
+                FocusedBorderColor: =Rectangle19.BorderColor
+                Height: =99
+                HoverFill: =Rectangle19.Fill
+                OnSelect: |-
+                    =Navigate(StatusPage, ScreenTransition.Fade,{type:Value17.Text})
+                PressedFill: =Rectangle19.Fill
+                TabIndex: =0
+                Width: =610
+                X: =30
+                Y: =30
+                ZIndex: =12
+
+            Rectangle16_6 As rectangle:
+                BorderColor: =RGBA(0, 0, 255, 1)
+                DisabledFill: =Rectangle16_6.Fill
+                Fill: =RGBA(204, 204, 204, 1)
+                FocusedBorderColor: =Rectangle16_6.BorderColor
+                Height: =2
+                HoverFill: =Rectangle16_6.Fill
+                PressedFill: =Rectangle16_6.Fill
+                TabIndex: =0
+                Width: =640
+                Y: =128.75310751832583
+                ZIndex: =23
+
+            Rectangle16_7 As rectangle:
+                BorderColor: =RGBA(0, 0, 255, 1)
+                DisabledFill: =Rectangle16_7.Fill
+                Fill: =RGBA(204, 204, 204, 1)
+                FocusedBorderColor: =Rectangle16_7.BorderColor
+                Height: =2
+                HoverFill: =Rectangle16_7.Fill
+                PressedFill: =Rectangle16_7.Fill
+                TabIndex: =0
+                Width: =640
+                Y: =28.271604938271586
+                ZIndex: =24
+
+            icon9_2 As icon.ChevronRight:
+                BorderColor: =RGBA(0, 0, 0, 1)
+                Color: =RGBA(115, 115, 115, 1)
+                DisabledBorderColor: =RGBA(56, 56, 56, 1)
+                DisabledFill: =icon9_2.Fill
+                FocusedBorderColor: =icon9_2.BorderColor
+                Height: =40
+                HoverBorderColor: =ColorFade(icon9_2.BorderColor, 20%)
+                HoverColor: =ColorFade(icon9_2.Color, 20%)
+                HoverFill: =icon9_2.Fill
+                Icon: =Icon.ChevronRight
+                OnSelect: |-
+                    =Navigate(StatusPage, ScreenTransition.Fade,{type:Value17.Text})
+                PressedBorderColor: =ColorFade(icon9_2.BorderColor, -20%)
+                PressedColor: =ColorFade(icon9_2.Color, -20%)
+                PressedFill: =icon9_2.Fill
+                TabIndex: =0
+                Width: =32
+                X: =586.0246913580252
+                Y: =59.44444444444444
+                ZIndex: =25
+
+        DataCard19 As typedDataCard.textualEditCard:
+            BorderColor: =RGBA(0, 0, 0, 1)
+            BorderStyle: =BorderStyle.Solid
+            DataField: ="AssignedTo"
+            Default: =ThisItem.AssignedTo
+            DisplayMode: =DisplayMode.Edit
+            DisplayName: ="Assigned to"
+            Fill: =RGBA(0, 0, 0, 0)
+            Height: =101.14847428952726
+            Required: =false
+            Update: =Value18.Text
+            Width: =640
+            WidthFit: =false
+            X: =0.5
+            Y: =1328.5
+            ZIndex: =10
+
+            Key20 As label:
+                Color: =RGBA(47,41,43,1)
+                FocusedBorderColor: =Key20.BorderColor
+                FontWeight: =Lighter
+                Height: =72
+                HoverBorderColor: =Key20.BorderColor
+                HoverColor: =Key20.Color
+                HoverFill: =Key20.Fill
+                PaddingBottom: =18
+                PaddingLeft: =0
+                PaddingRight: =0
+                PaddingTop: =24
+                PressedBorderColor: =Key20.BorderColor
+                PressedColor: =Key20.Color
+                PressedFill: =Key20.Fill
+                Size: =21
+                Text: =Parent.DisplayName
+                VerticalAlign: =VerticalAlign.Top
+                Width: =238
+                Wrap: =false
+                X: =30
+                Y: =7.058823529411765
+                ZIndex: =1
+
+            Value18 As text:
+                BorderColor: =If(IsBlank(Parent.Error),  RGBA(159, 167, 165, 0), Color.Red)
+                Default: =assign
+                DisabledBorderColor: = RGBA(159, 167, 165, 0)
+                DisabledColor: =RGBA(47, 41, 43, 1)
+                DisabledFill: =RGBA(159, 167, 165, 0)
+                DisplayMode: =If(true,DisplayMode.Disabled,DisplayMode.Edit)
+                FocusedBorderColor: =Value18.BorderColor
+                FocusedBorderThickness: =3
+                Height: =52
+                HoverBorderColor: =RGBA(101, 128, 187, 0)
+                HoverFill: =RGBA(190, 202, 226, 0)
+                OnSelect: |-
+                    =Navigate(AssignPage, ScreenTransition.Fade,{assign:Value18.Text})
+                PaddingLeft: =0
+                PressedBorderColor: =Value18.HoverBorderColor
+                PressedColor: =Value18.Color
+                PressedFill: =Value18.Fill
+                RadiusBottomLeft: =0
+                RadiusBottomRight: =0
+                RadiusTopLeft: =0
+                RadiusTopRight: =0
+                Size: =21
+                Width: =313.2098765432101
+                X: =295.8235294117647
+                Y: =23.529411764705877
+                ZIndex: =2
+
+            ErrorMessage21 As label:
+                AutoHeight: =true
+                FocusedBorderColor: =ErrorMessage21.BorderColor
+                Height: =24
+                HoverBorderColor: =ErrorMessage21.BorderColor
+                HoverColor: =ErrorMessage21.Color
+                HoverFill: =ErrorMessage21.Fill
+                PaddingBottom: =0
+                PaddingLeft: =0
+                PaddingRight: =0
+                PaddingTop: =0
+                PressedBorderColor: =ErrorMessage21.BorderColor
+                PressedColor: =ErrorMessage21.Color
+                PressedFill: =ErrorMessage21.Fill
+                Size: =12
+                Text: =Parent.Error
+                Width: =Parent.Width - 60
+                X: =30
+                Y: =Value18.Y + Value18.Height
+                ZIndex: =3
+
+            StarVisible21 As label:
+                Align: =Align.Center
+                FocusedBorderColor: =StarVisible21.BorderColor
+                Height: =Key20.Height
+                HoverBorderColor: =StarVisible21.BorderColor
+                HoverColor: =StarVisible21.Color
+                HoverFill: =StarVisible21.Fill
+                PaddingBottom: =Key20.PaddingBottom
+                PaddingLeft: =Key20.PaddingLeft
+                PaddingRight: =Key20.PaddingRight
+                PaddingTop: =Key20.PaddingTop
+                PressedBorderColor: =StarVisible21.BorderColor
+                PressedColor: =StarVisible21.Color
+                PressedFill: =StarVisible21.Fill
+                Size: =21
+                Text: ="*"
+                VerticalAlign: =VerticalAlign.Top
+                Visible: =false
+                Width: =30
+                Wrap: =false
+                Y: =Key20.Y
+                ZIndex: =4
+
+            Rectangle19_1 As rectangle:
+                BorderColor: =RGBA(0, 0, 255, 1)
+                DisabledFill: =Rectangle19_1.Fill
+                Fill: =RGBA(0, 0, 0, 0)
+                FocusedBorderColor: =Rectangle19_1.BorderColor
+                Height: =98.8571428571428
+                HoverFill: =Rectangle19_1.Fill
+                OnSelect: |-
+                    =Navigate(AssignPage, ScreenTransition.Fade,{assign:Value18.Text})
+                PressedFill: =Rectangle19_1.Fill
+                TabIndex: =0
+                Width: =610
+                X: =30
+                ZIndex: =13
+
+            Rectangle16_8 As rectangle:
+                BorderColor: =RGBA(0, 0, 255, 1)
+                DisabledFill: =Rectangle16_8.Fill
+                Fill: =RGBA(204, 204, 204, 1)
+                FocusedBorderColor: =Rectangle16_8.BorderColor
+                Height: =2
+                HoverFill: =Rectangle16_8.Fill
+                PressedFill: =Rectangle16_8.Fill
+                TabIndex: =0
+                Width: =640
+                Y: =98.58823529411775
+                ZIndex: =26
+
+            icon9_3 As icon.ChevronRight:
+                BorderColor: =RGBA(0, 0, 0, 1)
+                Color: =RGBA(115, 115, 115, 1)
+                DisabledBorderColor: =RGBA(56, 56, 56, 1)
+                DisabledFill: =icon9_3.Fill
+                FocusedBorderColor: =icon9_3.BorderColor
+                Height: =40
+                HoverBorderColor: =ColorFade(icon9_3.BorderColor, 20%)
+                HoverColor: =ColorFade(icon9_3.Color, 20%)
+                HoverFill: =icon9_3.Fill
+                Icon: =Icon.ChevronRight
+                OnSelect: |-
+                    =Navigate(AssignPage, ScreenTransition.Fade,{assign:Value18.Text})
+                PressedBorderColor: =ColorFade(icon9_3.BorderColor, -20%)
+                PressedColor: =ColorFade(icon9_3.Color, -20%)
+                PressedFill: =icon9_3.Fill
+                TabIndex: =0
+                Width: =32
+                X: =586.2352941176467
+                Y: =28.823529411764706
+                ZIndex: =27
+
+        DataCard1 As typedDataCard.textualEditCard:
+            BorderColor: =RGBA(0, 0, 0, 1)
+            BorderStyle: =BorderStyle.Solid
+            DataField: ="Comment"
+            Default: =ThisItem.Comment
+            DisplayMode: =DisplayMode.Edit
+            DisplayName: ="Comment"
+            Fill: =RGBA(0, 0, 0, 0)
+            Height: =266.0234375
+            Required: =false
+            Update: =Value16_1.Text
+            Width: =640
+            WidthFit: =false
+            X: =0.5
+            Y: =1462.5
+            ZIndex: =11
+
+            Key2 As label:
+                Color: =RGBA(47,41,43,1)
+                FocusedBorderColor: =Key2.BorderColor
+                FontWeight: =Lighter
+                Height: =72
+                HoverBorderColor: =Key2.BorderColor
+                HoverColor: =Key2.Color
+                HoverFill: =Key2.Fill
+                PaddingBottom: =18
+                PaddingLeft: =0
+                PaddingRight: =0
+                PaddingTop: =24
+                PressedBorderColor: =Key2.BorderColor
+                PressedColor: =Key2.Color
+                PressedFill: =Key2.Fill
+                Size: =21
+                Text: ="Internal comments"
+                VerticalAlign: =VerticalAlign.Top
+                Width: =Parent.Width - 60
+                Wrap: =false
+                X: =28.823529411764706
+                Y: =4.705882352941177
+                ZIndex: =1
+
+            StarVisible7 As label:
+                Align: =Align.Center
+                FocusedBorderColor: =StarVisible7.BorderColor
+                Height: =Key2.Height
+                HoverBorderColor: =StarVisible7.BorderColor
+                HoverColor: =StarVisible7.Color
+                HoverFill: =StarVisible7.Fill
+                PaddingBottom: =Key2.PaddingBottom
+                PaddingLeft: =Key2.PaddingLeft
+                PaddingRight: =Key2.PaddingRight
+                PaddingTop: =Key2.PaddingTop
+                PressedBorderColor: =StarVisible7.BorderColor
+                PressedColor: =StarVisible7.Color
+                PressedFill: =StarVisible7.Fill
+                Size: =21
+                Text: ="*"
+                VerticalAlign: =VerticalAlign.Top
+                Visible: =false
+                Width: =30
+                Wrap: =false
+                Y: =Key2.Y
+                ZIndex: =4
+
+            Value16_1 As text:
+                BorderColor: =If(IsBlank(Parent.Error),  RGBA(204,204,204,1), Color.Red)
+                Default: =EditRecord.Comment
+                DisabledBorderColor: =RGBA(204,204,204,1)
+                DisabledColor: =RGBA(47, 41, 43, 1)
+                DisabledFill: =RGBA(159, 167, 165, 0)
+                DisplayMode: =If(disabledcomment,DisplayMode.Disabled,DisplayMode.Edit)
+                Fill: =RGBA(255, 255, 255, 0)
+                FocusedBorderColor: =Value16_1.BorderColor
+                FocusedBorderThickness: =3
+                Height: =156
+                HoverBorderColor: =RGBA(204,204,204,1)
+                HoverFill: =RGBA(190, 202, 226, 0)
+                Mode: =TextMode.MultiLine
+                PaddingLeft: =10
+                PressedBorderColor: =Value16_1.HoverBorderColor
+                PressedColor: =Value16_1.Color
+                PressedFill: =Value16_1.Fill
+                RadiusBottomLeft: =0
+                RadiusBottomRight: =0
+                RadiusTopLeft: =0
+                RadiusTopRight: =0
+                Size: =21
+                Width: =580
+                X: =30
+                Y: =79.53639082751746
+                ZIndex: =14
+
+            Rectangle21_1 As rectangle:
+                BorderColor: =RGBA(0, 0, 255, 1)
+                DisabledFill: =Rectangle21_1.Fill
+                Fill: =RGBA(0, 0, 0, 0)
+                FocusedBorderColor: =Rectangle21_1.BorderColor
+                Height: =156.83050847457628
+                HoverFill: =Rectangle21_1.Fill
+                OnSelect: |-
+                    =UpdateContext({commv:false,disabledcomment:false})
+                PressedFill: =Rectangle21_1.Fill
+                TabIndex: =0
+                Visible: =commv
+                Width: =580
+                X: =30
+                Y: =76.3459621136593
+                ZIndex: =15
+
+        DataCard2 As typedDataCard.textualEditCard:
+            BorderColor: =RGBA(0, 0, 0, 1)
+            BorderStyle: =BorderStyle.Solid
+            DataField: ="DateClosed"
+            Default: =ThisItem.DateClosed
+            DisplayMode: =DisplayMode.Edit
+            DisplayName: ="DateClosed"
+            Fill: =RGBA(0, 0, 0, 0)
+            Height: =80
+            Required: =false
+            Update: =Value2.Text
+            Visible: =false
+            Width: =640
+            WidthFit: =false
+            X: =0
+            Y: =1480.35483250528
+            ZIndex: =12
+
+            Key4 As label:
+                FocusedBorderColor: =Key4.BorderColor
+                Height: =72
+                HoverBorderColor: =Key4.BorderColor
+                HoverColor: =Key4.Color
+                HoverFill: =Key4.Fill
+                PaddingBottom: =18
+                PaddingLeft: =0
+                PaddingRight: =0
+                PaddingTop: =24
+                PressedBorderColor: =Key4.BorderColor
+                PressedColor: =Key4.Color
+                PressedFill: =Key4.Fill
+                Size: =21
+                Text: =Parent.DisplayName
+                VerticalAlign: =VerticalAlign.Top
+                Width: =Parent.Width - 60
+                Wrap: =false
+                X: =30
+                ZIndex: =1
+
+            Value2 As text:
+                BorderColor: =If(IsBlank(Parent.Error), Parent.BorderColor, Color.Red)
+                Default: =If(type="Closed",Today(),"--")
+                FocusedBorderColor: =Value2.BorderColor
+                FocusedBorderThickness: =3
+                Height: =52
+                PaddingLeft: =10
+                PressedBorderColor: =Value2.HoverBorderColor
+                PressedColor: =Value2.Color
+                PressedFill: =Value2.Fill
+                RadiusBottomLeft: =0
+                RadiusBottomRight: =0
+                RadiusTopLeft: =0
+                RadiusTopRight: =0
+                Size: =21
+                Width: =Parent.Width - 60
+                X: =30
+                Y: =Key4.Height
+                ZIndex: =2
+
+            ErrorMessage1 As label:
+                AutoHeight: =true
+                FocusedBorderColor: =ErrorMessage1.BorderColor
+                Height: =24
+                HoverBorderColor: =ErrorMessage1.BorderColor
+                HoverColor: =ErrorMessage1.Color
+                HoverFill: =ErrorMessage1.Fill
+                PaddingBottom: =0
+                PaddingLeft: =0
+                PaddingRight: =0
+                PaddingTop: =0
+                PressedBorderColor: =ErrorMessage1.BorderColor
+                PressedColor: =ErrorMessage1.Color
+                PressedFill: =ErrorMessage1.Fill
+                Size: =12
+                Text: =Parent.Error
+                Width: =Parent.Width - 60
+                X: =30
+                Y: =Value2.Y + Value2.Height
+                ZIndex: =3
+
+            StarVisible8 As label:
+                Align: =Align.Center
+                FocusedBorderColor: =StarVisible8.BorderColor
+                Height: =Key4.Height
+                HoverBorderColor: =StarVisible8.BorderColor
+                HoverColor: =StarVisible8.Color
+                HoverFill: =StarVisible8.Fill
+                PaddingBottom: =Key4.PaddingBottom
+                PaddingLeft: =Key4.PaddingLeft
+                PaddingRight: =Key4.PaddingRight
+                PaddingTop: =Key4.PaddingTop
+                PressedBorderColor: =StarVisible8.BorderColor
+                PressedColor: =StarVisible8.Color
+                PressedFill: =StarVisible8.Fill
+                Size: =21
+                Text: ="*"
+                VerticalAlign: =VerticalAlign.Top
+                Visible: =false
+                Width: =30
+                Wrap: =false
+                Y: =Key4.Y
+                ZIndex: =4
+
